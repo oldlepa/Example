@@ -24,9 +24,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class SimpleExcelReaderExample {
 
-	/*public static void main(String[] args) throws IOException{
-		 String excelFilePath = "C:\\Users\\odiop\\Desktop\\carrefourJar\\importExcel.xlsx";
-	      /*  FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
+	public static void main(String[] args) throws IOException{
+		 String excelFilePath = "C:\\Users\\odiop\\Desktop\\carrefourJar\\20170401141014-MS040917-12-planning_realise.xlsx";
+	       FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 	         
 	        Workbook workbook = new XSSFWorkbook(inputStream);
 	        Sheet firstSheet = workbook.getSheetAt(0);
@@ -56,7 +56,7 @@ public class SimpleExcelReaderExample {
 	        }
 	         
 	        workbook.close();
-	        inputStream.close();*/
+	        inputStream.close();
 		/* List sheetData = new ArrayList();
 		 FileInputStream fis = null;
 	        try {
@@ -119,57 +119,57 @@ public class SimpleExcelReaderExample {
 	        showExelData(sheetData);
 		 
 		 
+		 */
 		 
 		 
 		 
-		 
-	    }*/
+	    }
 	
-	public static final String EXAMPLE_TEST = "7702.0";
-
-	public static void main(String[] args) throws IOException{
-		
-	/*	Pattern pattern = Pattern.compile("[0-9]*");
-		
-		Matcher matcher = pattern.matcher(EXAMPLE_TEST);
-		
-		System.out.println("la reponse est :"+matcher.matches());
-		
-		String string = "7702";
-		
-		String test [] = string.split(string, string.lastIndexOf('-') + 1);
-		
-		int i = string.lastIndexOf(".");
-		
-		if(i > 0){
-			String last = string.substring(0, string.lastIndexOf("."));
-			System.out.println("la chaine est : " +last);
-		}else{			
-			System.out.println("la chaine est : " +string);
-		}*/
-		
-		String tab2[];
-		
-		Map<String, String> corespondanceApplication = new HashMap<>();
-		
-		String application = "appli1=jesuisAppli1---appli2=jesuisAppli2---appli3=jesuisAppli3";
-		
-		String test [] = application.split("---");
-		
-		for(int i=0;i<test.length;i++){
-			tab2 = test[i].split("=");
-			
-			corespondanceApplication.put(tab2[0], tab2[1]);
-		}
-		
-		//affichage des application
-		for(String apllication : corespondanceApplication.keySet()){
-			System.out.println("l'application " + apllication + "à pour URL " + corespondanceApplication.get(apllication));
-		}
-		
-		
-		
-	}
+//	public static final String EXAMPLE_TEST = "7702.0";
+//
+//	public static void main(String[] args) throws IOException{
+//		
+//	/*	Pattern pattern = Pattern.compile("[0-9]*");
+//		
+//		Matcher matcher = pattern.matcher(EXAMPLE_TEST);
+//		
+//		System.out.println("la reponse est :"+matcher.matches());
+//		
+//		String string = "7702";
+//		
+//		String test [] = string.split(string, string.lastIndexOf('-') + 1);
+//		
+//		int i = string.lastIndexOf(".");
+//		
+//		if(i > 0){
+//			String last = string.substring(0, string.lastIndexOf("."));
+//			System.out.println("la chaine est : " +last);
+//		}else{			
+//			System.out.println("la chaine est : " +string);
+//		}*/
+//		
+//		String tab2[];
+//		
+//		Map<String, String> corespondanceApplication = new HashMap<>();
+//		
+//		String application = "appli1=jesuisAppli1---appli2=jesuisAppli2---appli3=jesuisAppli3";
+//		
+//		String test [] = application.split("---");
+//		
+//		for(int i=0;i<test.length;i++){
+//			tab2 = test[i].split("=");
+//			
+//			corespondanceApplication.put(tab2[0], tab2[1]);
+//		}
+//		
+//		//affichage des application
+//		for(String apllication : corespondanceApplication.keySet()){
+//			System.out.println("l'application " + apllication + "à pour URL " + corespondanceApplication.get(apllication));
+//		}
+//		
+//		
+//		
+//	}
 	
 	
 	
