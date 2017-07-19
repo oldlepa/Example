@@ -359,7 +359,6 @@ public class ReedTheFolder {
 											
 										}
 										
-										System.out.println("Test de changement de branche");
 										
 										
 										insert_planingJour = "";
