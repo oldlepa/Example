@@ -18,13 +18,12 @@
 	    <version>3.15</version>
 	</dependency>
 	
-	
 	<dependency>
 	    <groupId>com.lowagie</groupId>
 	    <artifactId>itext</artifactId>
 	    <version>2.1.7</version>
     </dependency>
-   
+    
     <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
 <dependency>
     <groupId>com.itextpdf</groupId>
@@ -44,7 +43,7 @@
 			<artifactId>xcelite</artifactId>
 			<version>1.0.4</version>
 </dependency>
-	
+
 	
 
     </dependencies>
