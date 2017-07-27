@@ -190,11 +190,24 @@ public class ReedTheFolder {
 							planing1.setAutre(horaire);
 			    			if(horaire.contains("-")){
 			    				String tabHeure[] = horaire.split(" ");
+			    				String []tab = new String[tabHeure.length];
+			    				
+			    				for(int heure=0;heure<tabHeure.length;heure++){
+									if(tabHeure[heure].contains("-") && tabHeure[heure].contains("h")){
+										tab[heure] = tabHeure[heure];
+									}
+								}
+			    				
+			    				List<String> list = new ArrayList<String>(Arrays.asList(tab));
+			    				System.out.println(list);
+			    				list.removeAll(Arrays.asList("", null));
+			    				
+			    				
 			    				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
 								List<Date> dates = new ArrayList<Date>();
-								for(int z=0;z<tabHeure.length;z++){
-									if(!tabHeure[z].contains("_")){
-										String tabHeure2[] = tabHeure[z].split("-");
+								for(int z=0;z<list.size();z++){
+									if(!list.get(z).contains("_") && list.get(z).contains("-")){
+										String tabHeure2[] = list.get(z).split("-");
 										if(tabHeure2.length > 1){
 											for(String str : tabHeure2) {
 											    dates.add(simpleDateFormat.parse(str.replace("h", ":")));
@@ -298,7 +311,7 @@ public class ReedTheFolder {
 						
 							String insert_planingSalarie ="<!--Creation du planning salarie de la semaine " +numSemaine +" pour l'employé " + nom;
 							insert_planingSalarie += " --> \n";
-							insert_planingSalarie += "INSERT INTO planning_salarie(id_salarie,id_planning_point_vente,termine) VALUES ( select id_salarie from contrat where numero_contrat like " +ligne.getId_contrat() +",";
+							insert_planingSalarie += "INSERT INTO planning_salarie(id_salarie,id_planning_point_vente,termine) VALUES ( select id_salarie from contrat where numero_contrat like '" +ligne.getId_contrat() +"',";
 							insert_planingSalarie +="select id_planning_point_vente from planning_point_vente where id_point_vente in";
 							insert_planingSalarie +=" (select id_point_vente from point_vente where numero_point_vente like "+ligne.getPoint_vente() +") and date_debut = '"+ firstLineAfter.get(0).split(" ")[2] +"',";
 							insert_planingSalarie +="true);\n";
@@ -307,18 +320,18 @@ public class ReedTheFolder {
 							
 							String insert_ev_hebdo = "<!-- Création de l'évenement Hebdo de l'employe "+ nom +"pour la semaine du " + numSemaine +" --> \n";
 							insert_ev_hebdo +="insert into ev_hebdo(id_planning_salarie,id_element,code_element,valeur) values (";
-							insert_ev_hebdo +="select id_planning_salarie from planning_salarie where id_salarie in (select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat();
-							insert_ev_hebdo +=") and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in";
+							insert_ev_hebdo +="select id_planning_salarie from planning_salarie where id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat();
+							insert_ev_hebdo +="') and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in";
 							insert_ev_hebdo +=" (select id_point_vente from point_vente where numero_point_vente like " + ligne.getPoint_vente() +" ) and date_debut = '"+ firstLineAfter.get(0).split(" ")[2] +"'), '000', 'CODE','000'";
 							insert_ev_hebdo +=");\n";
 							listeInsertion.add(insert_ev_hebdo);
 							
 							
-							String insert_planingJour = "\n<!-- Requete pour tous les jours de la semaine " +numSemaine +" pour l'employé " + nom +"  -->";
+							String insert_planingJour = "\n<!-- Requete pour tous les jours de la semaine " +numSemaine +" pour l'employé " + nom +"  --> \n";
 														
-							String insert_plageHoraire ="\n<!-- toutes les plages horaires du salarié "+ nom +" pour de la semaine " +numSemaine +" -->";
+							String insert_plageHoraire ="\n<!-- toutes les plages horaires du salarié "+ nom +" pour de la semaine " +numSemaine +" --> \n";
 						
-							String insert_evJour ="\n<!-- pour tous les jours de la semaine du salarié "+ nom +" -->";
+							String insert_evJour ="\n<!-- pour tous les jours de la semaine du salarié "+ nom +" --> \n";
 												
 							ArrayList<String> insertionPaning = new ArrayList<>();
 							insertionPaning.add(insert_planingJour);
@@ -346,8 +359,8 @@ public class ReedTheFolder {
 									insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
 									insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
 									insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-									insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like "+ ligne.getId_contrat();
-									insert_planingJour +=") and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
+									insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
+									insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
 									//recuperation de la date du jour
 									insert_planingJour +="'"+planing.getDate()+"',";
 									//recuperation de id_planning_type_jour
@@ -355,7 +368,7 @@ public class ReedTheFolder {
 									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 									insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-									insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 									insert_planingJour +=" and pt.fin is null),";
 									//recuperation de contractuel
@@ -363,7 +376,7 @@ public class ReedTheFolder {
 									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 									insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-									insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 									insert_planingJour +=" and pt.fin is null),";
 									//recuperation de id_planning_plage
@@ -371,7 +384,7 @@ public class ReedTheFolder {
 									insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
 									insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
 									insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-									insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +")),";;
+									insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
 									//recuperation de l'unite H ou J
 									insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
 									//presence matin, soir et Normal N ou Abscence A
@@ -413,8 +426,8 @@ public class ReedTheFolder {
 												insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
 												insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
 												insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-												insert_plageHoraire+=" and c.numero_contrat like "+ligne.getId_contrat();
-												insert_plageHoraire+=" and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
+												insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
+												insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
 												insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
 												insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
 												insert_plageHoraire +="'"+heur.split("-")[0].replaceAll("h", ":")+"'," +"'"+heur.split("-")[1].replaceAll("h", ":")+"'" +",";
@@ -438,8 +451,8 @@ public class ReedTheFolder {
 														insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
 														insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
 														insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-														insert_plageHoraire+=" and c.numero_contrat like "+ligne.getId_contrat();
-														insert_plageHoraire+=" and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
+														insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
+														insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
 														insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
 														insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
 														insert_plageHoraire +="'09:00'," +"'13:00'" +",";
@@ -451,8 +464,8 @@ public class ReedTheFolder {
 														insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
 														insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
 														insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-														insert_plageHoraire+=" and c.numero_contrat like "+ligne.getId_contrat();
-														insert_plageHoraire+=" and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
+														insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
+														insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
 														insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
 														insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
 														insert_plageHoraire +="'14:00'," +"'18:00'" +",";
@@ -473,8 +486,8 @@ public class ReedTheFolder {
 										insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
 										insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
 										insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-										insert_plageHoraire+=" and c.numero_contrat like "+ligne.getId_contrat();
-										insert_plageHoraire+=" and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
+										insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
+										insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
 										insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
 										insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
 										insert_plageHoraire +="'"+heureSansRetour[0].replaceAll("h", ":")+"'," +"'"+heureSansRetour[1].replaceAll("h", ":")+"'" +",";
@@ -489,8 +502,8 @@ public class ReedTheFolder {
 										insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
 										insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
 										insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-										insert_plageHoraire+=" and c.numero_contrat like "+ligne.getId_contrat();
-										insert_plageHoraire+=" and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
+										insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
+										insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
 										insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
 										insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
 										insert_plageHoraire +="''," +"''" +",";
@@ -503,8 +516,8 @@ public class ReedTheFolder {
 										insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
 										insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
 										insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-										insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like "+ ligne.getId_contrat();
-										insert_planingJour +=") and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
+										insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
+										insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
 										//recuperation de la date du jour
 										insert_planingJour +="'"+planing.getDate()+"',";
 										//recuperation de id_planning_type_jour
@@ -512,7 +525,7 @@ public class ReedTheFolder {
 										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 										insert_planingJour +=" and pt.fin is null),";
 										//recuperation de contractuel
@@ -520,7 +533,7 @@ public class ReedTheFolder {
 										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 										insert_planingJour +=" and pt.fin is null),";
 										//recuperation de id_planning_plage
@@ -528,7 +541,7 @@ public class ReedTheFolder {
 										insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
 										insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
 										insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-										insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +")),";;
+										insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
 										//recuperation de l'unite H ou J
 										insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
 										//presence matin, soir et Normal N ou Abscence A
@@ -548,8 +561,8 @@ public class ReedTheFolder {
 										insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
 										insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
 										insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-										insert_plageHoraire+=" and c.numero_contrat like "+ligne.getId_contrat();
-										insert_plageHoraire+=" and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
+										insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
+										insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
 										insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
 										insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
 										insert_plageHoraire +="'09:00:00'," +"'17:00:00'" +",";
@@ -562,8 +575,8 @@ public class ReedTheFolder {
 										insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
 										insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
 										insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-										insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like "+ ligne.getId_contrat();
-										insert_planingJour +=") and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
+										insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
+										insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
 										//recuperation de la date du jour
 										insert_planingJour +="'"+planing.getDate()+"',";
 										//recuperation de id_planning_type_jour
@@ -571,7 +584,7 @@ public class ReedTheFolder {
 										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 										insert_planingJour +=" and pt.fin is null),";
 										//recuperation de contractuel
@@ -579,7 +592,7 @@ public class ReedTheFolder {
 										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 										insert_planingJour +=" and pt.fin is null),";
 										//recuperation de id_planning_plage
@@ -587,7 +600,7 @@ public class ReedTheFolder {
 										insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
 										insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
 										insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-										insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +")),";;
+										insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
 										//recuperation de l'unite H ou J
 										insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
 										//presence matin, soir et Normal N ou Abscence A
@@ -631,8 +644,8 @@ public class ReedTheFolder {
 								
 								
 								insert_evJour +="insert into ev_jour(id_planning_jour,id_element,code_element,valeur) values (";
-								insert_evJour +="select id_planning_jour from planning_jour where id_planning_salarie in (select id_planning_salarie from planning_salarie where id_salarie="+ligne.getId_contrat();
-								insert_evJour +=" and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in (";
+								insert_evJour +="select id_planning_jour from planning_jour where id_planning_salarie in (select id_planning_salarie from planning_salarie where id_salarie='"+ligne.getId_contrat();
+								insert_evJour +="' and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in (";
 								insert_evJour +="select id_point_vente from point_vente where numero_point_vente like '"+ligne.getPoint_vente() +"') and date_debut ='"+firstLineAfter.get(0).split(" ")[2] +"')) and date = " +"'"+planing.getDate()+"',";
 								insert_evJour +="'000','CODE','000');\n";
 								
@@ -675,7 +688,7 @@ public class ReedTheFolder {
 											}else{
 												insert_planingPlage +=typeRetrouve+",";
 												insert_planingPlage +="'"+planningDTO.get(nom).getUnite() +"',";
-												insert_planingPlage +="select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +",";
+												insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"',";
 												insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +ligne.getPoint_vente();
 												insert_planingPlage +="');";
 												insertion_planingPlage.add(insert_planingPlage);
@@ -687,8 +700,8 @@ public class ReedTheFolder {
 												insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
 												insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
 												insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-												insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like "+ ligne.getId_contrat();
-												insert_planingJour +=") and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
+												insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
+												insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
 												//recuperation de la date du jour
 												insert_planingJour +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
 												//recuperation de id_planning_type_jour
@@ -696,7 +709,7 @@ public class ReedTheFolder {
 												insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 												insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 												insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-												insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+												insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 												insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 												insert_planingJour +=" and pt.fin is null),";
 												//recuperation de contractuel
@@ -704,7 +717,7 @@ public class ReedTheFolder {
 												insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 												insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 												insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-												insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+												insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 												insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 												insert_planingJour +=" and pt.fin is null),";
 												//recuperation de id_planning_plage
@@ -712,7 +725,7 @@ public class ReedTheFolder {
 												insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
 												insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
 												insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-												insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +")),";;
+												insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
 												//recuperation de l'unite H ou J
 												insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
 												//presence matin, soir et Normal N ou Abscence A
@@ -737,7 +750,7 @@ public class ReedTheFolder {
 											}else{
 											insert_planingPlage +=typeRetrouve+",";
 											insert_planingPlage +="'"+planningDTO.get(nom).getUnite() +"',";
-											insert_planingPlage +="select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +",";
+											insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"',";
 											insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +ligne.getPoint_vente();
 											insert_planingPlage +="');";
 											insertion_planingPlage.add(insert_planingPlage);
@@ -749,8 +762,8 @@ public class ReedTheFolder {
 											insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
 											insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
 											insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-											insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like "+ ligne.getId_contrat();
-											insert_planingJour +=") and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
+											insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
+											insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
 											//recuperation de la date du jour
 											insert_planingJour +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
 											//recuperation de id_planning_type_jour
@@ -758,7 +771,7 @@ public class ReedTheFolder {
 											insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 											insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 											insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-											insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+											insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 											insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 											insert_planingJour +=" and pt.fin is null),";
 											//recuperation de contractuel
@@ -766,7 +779,7 @@ public class ReedTheFolder {
 											insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 											insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 											insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-											insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+											insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 											insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 											insert_planingJour +=" and pt.fin is null),";
 											//recuperation de id_planning_plage
@@ -774,7 +787,7 @@ public class ReedTheFolder {
 											insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
 											insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
 											insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-											insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +")),";;
+											insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
 											//recuperation de l'unite H ou J
 											insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
 											//presence matin, soir et Normal N ou Abscence A
@@ -806,7 +819,7 @@ public class ReedTheFolder {
 										listeExeption.add(exception);
 									}else{
 									insert_planingPlage +="'"+planningDTO.get(nom).getUnite() +"',";
-									insert_planingPlage +="select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +",";
+									insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"',";
 									insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +ligne.getPoint_vente();
 									insert_planingPlage +="');";
 									insertion_planingPlage.add(insert_planingPlage);
@@ -819,8 +832,8 @@ public class ReedTheFolder {
 									insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
 									insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
 									insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-									insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like "+ ligne.getId_contrat();
-									insert_planingJour +=") and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
+									insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
+									insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
 									//recuperation de la date du jour
 									insert_planingJour +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
 									//recuperation de id_planning_type_jour
@@ -828,7 +841,7 @@ public class ReedTheFolder {
 									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 									insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-									insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 									insert_planingJour +=" and pt.fin is null),";
 									//recuperation de contractuel
@@ -836,7 +849,7 @@ public class ReedTheFolder {
 									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
 									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
 									insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-									insert_planingJour +="and c.numero_contrat like " +ligne.getId_contrat() +" ";
+									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
 									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
 									insert_planingJour +=" and pt.fin is null),";
 									//recuperation de id_planning_plage
@@ -844,7 +857,7 @@ public class ReedTheFolder {
 									insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
 									insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
 									insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-									insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like "+ligne.getId_contrat() +")),";;
+									insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
 									//recuperation de l'unite H ou J
 									insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
 									//presence matin, soir et Normal N ou Abscence A
