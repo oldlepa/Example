@@ -27,7 +27,7 @@ public class ContratSupprimer implements Serializable{
 	private String prenom;
 	
 	@Column (name="id_salarie",ignoreType = true)
-	private Integer id_contrat;
+	private String id_contrat;
 
 	public ContratSupprimer() {
 		super();
@@ -82,11 +82,11 @@ public class ContratSupprimer implements Serializable{
 		this.prenom = prenom;
 	}
 
-	public Integer getId_contrat() {
+	public String getId_contrat() {
 		return id_contrat;
 	}
 
-	public void setId_contrat(Integer id_contrat) {
+	public void setId_contrat(String id_contrat) {
 		this.id_contrat = id_contrat;
 	}
 

@@ -74,7 +74,7 @@ public class ReedTheFolder {
 		 TreeMap<String, File> mapFile = new TreeMap<String, File>();
 	    
 	    Planing_jour planing1 = null;
-	    PlanningDTO planingDTO = null;
+	    PlanningDTO planingDTO = null; //Y:\Echange\odiop\caroll_vrac_excel //C:\\Users\\odiop\\Desktop\\BPWe
 	    String repertoire1 ="C:\\Users\\odiop\\Desktop\\BPWeb",repertoire2="C:\\Users\\odiop\\Desktop\\Contrats_supprimes.xlsx";
 	    
 	  //  writeExcelContrat();
@@ -133,8 +133,6 @@ public class ReedTheFolder {
 			    		
 			    		firstLineAfter.add(jour);
 			    	}
-			    	
-			    	
 			    	
 			    	for(String nom :firstColonneAfter){
 			    		listTOTAL = new ArrayList<>();
