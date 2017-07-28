@@ -94,14 +94,13 @@ public class ReedTheFolder {
 	
 	public static void main(String[] args) throws Exception {
 	 
-	    //Map<String,File> mapFile = new HashMap<>();
+		 System.out.println("**************************************DEBUT DU TRAITEMENT*************************************");
 		 TreeMap<String, File> mapFile = new TreeMap<String, File>();
 	    
 	    Planing_jour planing1 = null;
-	    PlanningDTO planingDTO = null; //Y:\Echange\odiop\caroll_vrac_excel //C:\\Users\\odiop\\Desktop\\BPWe
+	    PlanningDTO planingDTO = null;
 	    String repertoire1 ="C:\\Users\\odiop\\Desktop\\BPWeb",repertoire2="C:\\Users\\odiop\\Desktop\\Contrats_supprimes.xlsx";
-	    
-	  //  writeExcelContrat();
+
 	    
 	    Collection<ContratSupprimer> contratCollection = readFileExcelContratSupprimer(repertoire2);
 	    
@@ -112,7 +111,7 @@ public class ReedTheFolder {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-	    System.out.println(mapFile);
+
 	    
 	    ReedTheFolder red = new ReedTheFolder();
 	    for(ContratSupprimer numMangasin : contratCollection){	
@@ -218,7 +217,6 @@ public class ReedTheFolder {
 								}
 			    				
 			    				List<String> list = new ArrayList<String>(Arrays.asList(tab));
-			    				System.out.println(list);
 			    				list.removeAll(Arrays.asList("", null));
 			    				
 			    				
@@ -697,7 +695,6 @@ public class ReedTheFolder {
 			insert_planingPlage +="');";
 			insertion_planingPlage.add(insert_planingPlage);
 			verificationJour = true;
-			System.out.println("La date de debut est "+ dateDebut +" et la date de fin est "+dateFin);
 		}
 	}
 	
