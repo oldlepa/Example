@@ -765,6 +765,7 @@ public class ReedTheFolder {
 	
 	static void addFile(File file, TreeMap<String,File> mapFile) throws ParseException{
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		//DateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		File[] children = file.listFiles();
 		String numMangasin;
 		if (children != null) {
@@ -772,12 +773,14 @@ public class ReedTheFolder {
 				if(child.getName().endsWith("xlsx")){
 					String[] tab = child.getName().split("-");
 					String date = tab[0];
+					//if(date.contains("~$")) date = date.substring(2, date.length());
 					numMangasin = tab[1]+"-"+tab[2];
 					if(mapFile.containsKey(numMangasin)){
 						File fileTree = mapFile.get(numMangasin);
 						String[] tab1 = fileTree.getName().split("-");
 						String date1 = tab1[0];
-						if(dateFormat.parse(date).after(dateFormat.parse(date1))){
+						System.out.println("date :"+date +"et date1 :"+date1);
+						if(dateFormat.parse(date.replaceAll("[-+.^:,~$]","")).after(dateFormat.parse(date1.replaceAll("[-+.^:,~$]","")))){
 							mapFile.put(numMangasin, child);
 						}
 						
