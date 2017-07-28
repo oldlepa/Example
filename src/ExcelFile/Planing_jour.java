@@ -17,6 +17,8 @@ public class Planing_jour {
 	private Integer nombre_heure;
 	
 	private String unite;
+	
+	private String firstDayWeek;
 
 	public Planing_jour() {
 		super();
@@ -85,6 +87,14 @@ public class Planing_jour {
 
 	public void setUnite(String unite) {
 		this.unite = unite;
+	}
+
+	public String getFirstDayWeek() {
+		return firstDayWeek;
+	}
+
+	public void setFirstDayWeek(String firstDayWeek) {
+		this.firstDayWeek = firstDayWeek;
 	}
 	
 	
