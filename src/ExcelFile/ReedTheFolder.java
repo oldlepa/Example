@@ -67,6 +67,30 @@ public class ReedTheFolder {
 	
 	static List<ContratSupprimer> listeRejetContrat = new ArrayList<ContratSupprimer>();
 	
+	static String insert_planingJour;
+	
+	static ArrayList<String> insertionPaning;
+	
+	static Date dateDebut;
+	
+	static Integer numJour;
+	
+	static Integer nombreHeure;
+	
+	static int typeRetrouve;
+	
+	static String datDebutSemaint;
+	
+	static String insert_plageHoraire;
+	
+	static ArrayList<String> insertionPlage;
+	
+	static String insert_planingPlage,exceptions;
+	
+	static boolean verificationJour = false;
+	
+	static ArrayList<String> insertion_planingPlage;
+	
 	
 	public static void main(String[] args) throws Exception {
 	 
@@ -126,11 +150,6 @@ public class ReedTheFolder {
 			    	mapListeTable = XlsxRead_2.getvalue_1(sortedMap.get(cleSorted).getAbsolutePath(),firstColonneAfter.size()+1);
 
 			    	for(String jour : mapListeTable.get("Jour")){
-//			    		if(jour.contains("\n")){
-//			    			String[] jourFormer = jour.split("\n");
-//			    			firstLineAfter.add(jourFormer[0] +"-" +jourFormer[2]);
-//			    		}
-			    		
 			    		firstLineAfter.add(jour);
 			    	}
 			    	
@@ -138,7 +157,6 @@ public class ReedTheFolder {
 			    		listTOTAL = new ArrayList<>();
 			    		listeTOTAL = new ArrayList<>();
 			    		listTOTAL = mapListeTable.get(nom.replace(" ", "_").replace("\n", " "));
-			    		//if(listTOTAL == null) listTOTAL = mapListeTable.get(nom.replace(" ", "\n"));
 			    		listTOTAL.remove(0);
 			    		planingListe = new ArrayList<>();
 			    		planingDTO = new PlanningDTO();
@@ -188,6 +206,7 @@ public class ReedTheFolder {
 							planing1.setNum_jour(ListeJour.get(firstLineAfter.get(k).split(" ")[0]));
 							planing1.setDate(firstLineAfter.get(k).split(" ")[2]);
 							planing1.setAutre(horaire);
+							planing1.setFirstDayWeek(firstLineAfter.get(0).split(" ")[2]);
 			    			if(horaire.contains("-")){
 			    				String tabHeure[] = horaire.split(" ");
 			    				String []tab = new String[tabHeure.length];
@@ -230,10 +249,6 @@ public class ReedTheFolder {
 			    	
 			    	//ajouter dans une map avec comme clé le nom du magasin et la semaine
 					mapInsertionBaseDTO.put(cleSorted, mapPlanningDTO);
-
-		       // }
-				
-				
 		     }
 	    	
 	    }	
@@ -258,7 +273,19 @@ public class ReedTheFolder {
 	    
 	}
 	
-	//prend un objet de contratSupprimer
+	
+	
+	
+	
+	
+	
+/**
+ * Traite chaque ligne du fichier excel pour la génération des requetes
+ *
+ * @param ligne chaque ligne est transforme en objet contratSupprimer
+ * @throws Exception
+ * 
+ */
 	static void recherchePlaningPersonne(ContratSupprimer ligne) throws Exception{
 		
 		
@@ -267,8 +294,8 @@ public class ReedTheFolder {
 		HashMap<String,PlanningDTO> planningDTO;
 		List<Planing_jour> planingListe;
 		String magasin = ligne.getPoint_vente();
-		Integer nombreHeure=0;
-		Integer numJour = 0;
+		nombreHeure=0;
+		numJour = 0;
 		String dateJour = null;
 		String nom = ligne.getPrenom()+" "+ligne.getNom();
 		
@@ -278,7 +305,7 @@ public class ReedTheFolder {
 			date = new ArrayList<>();
 			planningDTO = mapInsertionBaseDTO.get(magasin +"-"+ numSemaine);
 			
-			String exceptions = "\n=========================================================================================== \n";
+			exceptions = "\n=========================================================================================== \n";
 			exceptions += "EXCEPTION RELATIFVE A LA SEMAINE DU " +numSemaine +" POUR LE MAGASIN " +magasin +"\n";
 			exceptions += "=========================================================================================== \n";
 			
@@ -309,11 +336,13 @@ public class ReedTheFolder {
 							if(!listeRejetContrat.contains(ligne)) listeRejetContrat.add(ligne);							
 						}else{			
 						
+							datDebutSemaint = planingListe.get(0).getFirstDayWeek();
+							
 							String insert_planingSalarie ="<!--Creation du planning salarie de la semaine " +numSemaine +" pour l'employé " + nom;
 							insert_planingSalarie += " --> \n";
 							insert_planingSalarie += "INSERT INTO planning_salarie(id_salarie,id_planning_point_vente,termine) VALUES ( select id_salarie from contrat where numero_contrat like '" +ligne.getId_contrat() +"',";
 							insert_planingSalarie +="select id_planning_point_vente from planning_point_vente where id_point_vente in";
-							insert_planingSalarie +=" (select id_point_vente from point_vente where numero_point_vente like "+ligne.getPoint_vente() +") and date_debut = '"+ firstLineAfter.get(0).split(" ")[2] +"',";
+							insert_planingSalarie +=" (select id_point_vente from point_vente where numero_point_vente like "+ligne.getPoint_vente() +") and date_debut = '"+ datDebutSemaint+"',";
 							insert_planingSalarie +="true);\n";
 							
 							listeInsertion.add(insert_planingSalarie);
@@ -322,23 +351,25 @@ public class ReedTheFolder {
 							insert_ev_hebdo +="insert into ev_hebdo(id_planning_salarie,id_element,code_element,valeur) values (";
 							insert_ev_hebdo +="select id_planning_salarie from planning_salarie where id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat();
 							insert_ev_hebdo +="') and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in";
-							insert_ev_hebdo +=" (select id_point_vente from point_vente where numero_point_vente like " + ligne.getPoint_vente() +" ) and date_debut = '"+ firstLineAfter.get(0).split(" ")[2] +"'), '000', 'CODE','000'";
+							insert_ev_hebdo +=" (select id_point_vente from point_vente where numero_point_vente like " + ligne.getPoint_vente() +" ) and date_debut = '"+ datDebutSemaint +"'), '000', 'CODE','000'";
 							insert_ev_hebdo +=");\n";
 							listeInsertion.add(insert_ev_hebdo);
 							
 							
-							String insert_planingJour = "\n<!-- Requete pour tous les jours de la semaine " +numSemaine +" pour l'employé " + nom +"  --> \n";
+							insert_planingJour = "\n<!-- Requete pour tous les jours de la semaine " +numSemaine +" pour l'employé " + nom +"  --> \n";
 														
-							String insert_plageHoraire ="\n<!-- toutes les plages horaires du salarié "+ nom +" pour de la semaine " +numSemaine +" --> \n";
+							insert_plageHoraire ="\n<!-- toutes les plages horaires du salarié "+ nom +" pour de la semaine " +numSemaine +" --> \n";
 						
 							String insert_evJour ="\n<!-- pour tous les jours de la semaine du salarié "+ nom +" --> \n";
 												
-							ArrayList<String> insertionPaning = new ArrayList<>();
+							insertionPaning = new ArrayList<>();
 							insertionPaning.add(insert_planingJour);
 							
-							ArrayList<String> insertionPlage = new ArrayList<>();
+							insertionPlage = new ArrayList<>();
+							insertionPlage.add(insert_plageHoraire);
+							
 							ArrayList<String> insertion_evJour = new ArrayList<>();
-							ArrayList<String> insertion_planingPlage = new ArrayList<>();
+							insertion_planingPlage = new ArrayList<>();
 							
 							for(Planing_jour planing :planingListe){
 								
@@ -352,49 +383,9 @@ public class ReedTheFolder {
 																			
 								if(planing.getAutre().contains("-")){
 									
-									insert_planingJour ="";
-									insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
-									insert_planingJour +="unite,presence_matin,presence_apm,type_contenu,heures_effectuees) values (";
-									//recuperartion de id_planning_salarie
-									insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
-									insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
-									insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-									insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
-									insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
-									//recuperation de la date du jour
-									insert_planingJour +="'"+planing.getDate()+"',";
-									//recuperation de id_planning_type_jour
-									insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
-									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-									insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-									insert_planingJour +=" and pt.fin is null),";
-									//recuperation de contractuel
-									insert_planingJour +="(select ptj.contractuel from planning_type_jour ptj,planning_type pt, contrat c ";
-									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-									insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-									insert_planingJour +=" and pt.fin is null),";
-									//recuperation de id_planning_plage
-									insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
-									insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
-									insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
-									insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-									insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
-									//recuperation de l'unite H ou J
-									insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
-									//presence matin, soir et Normal N ou Abscence A
-									insert_planingJour +="-1,-1,'N',";
-									//recuperation de nombre d'heure travailler en minuite 
-									insert_planingJour +=(planing.getNombre_heure()/60)/60;
-									insert_planingJour +=");";
-
-									insertionPaning.add(insert_planingJour);
 									
+									insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-1","N",(planing.getNombre_heure()/60)/60,planing.getDate());
+							
 									if(planing.getAutre().contains(" ")){
 										heure = planing.getAutre().split(" ");
 										String []tabHeure = new String[heure.length];
@@ -420,23 +411,12 @@ public class ReedTheFolder {
 											
 											if(heur.contains("-") && !heur.contains("_")){
 						
-												insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
-												insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
-												insert_plageHoraire+=" where pj.id_planning_salarie=ps.id_planning_salarie";
-												insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
-												insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
-												insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-												insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
-												insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
-												insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
-												insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
-												insert_plageHoraire +="'"+heur.split("-")[0].replaceAll("h", ":")+"'," +"'"+heur.split("-")[1].replaceAll("h", ":")+"'" +",";
-												insert_plageHoraire +="'-1');\n";
+												insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"-1",heur);
 	
 											}else{
 												String typeAbscence = heur;
 												typeAbscence = typeAbscence.replace("\n", " ").replace(".", "_").replace("/", "_").replaceAll(" ", "_");
-												int typeRetrouve = TypeAbscence.get(typeAbscence);
+												typeRetrouve = TypeAbscence.get(typeAbscence);
 												
 												if(typeRetrouve == -1){
 													String exception = "Le type d'abscence " +typeAbscence +" ne peut pas etre traiter pour l'employe " + nom + "de la semaine du "+numSemaine +" et de la date du " + planing.getDate();
@@ -445,32 +425,9 @@ public class ReedTheFolder {
 												}else{
 
 													if(incrementation == 0 && tabHeure.length == 2){
-														insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
-														insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
-														insert_plageHoraire+=" where pj.id_planning_salarie=ps.id_planning_salarie";
-														insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
-														insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
-														insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-														insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
-														insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
-														insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
-														insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
-														insert_plageHoraire +="'09:00'," +"'13:00'" +",";
-														insert_plageHoraire +=typeRetrouve +");\n";	
+														insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"'"+typeRetrouve+"'","09h00-13h00");
 													}else{
-														insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
-														insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
-														insert_plageHoraire+=" where pj.id_planning_salarie=ps.id_planning_salarie";
-														insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
-														insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
-														insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-														insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
-														insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
-														insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
-														insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
-														insert_plageHoraire +="'14:00'," +"'18:00'" +",";
-														insert_plageHoraire +=typeRetrouve +";\n";	
-														
+														insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"'"+typeRetrouve+"'","14h00-18h00");
 													}
 												}												
 												
@@ -480,136 +437,20 @@ public class ReedTheFolder {
 										}
 									}else{
 										heureSansRetour = planing.getAutre().split("-");
-										insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
-										insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
-										insert_plageHoraire+=" where pj.id_planning_salarie=ps.id_planning_salarie";
-										insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
-										insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
-										insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-										insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
-										insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
-										insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
-										insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
-										insert_plageHoraire +="'"+heureSansRetour[0].replaceAll("h", ":")+"'," +"'"+heureSansRetour[1].replaceAll("h", ":")+"'" +",";
-										insert_plageHoraire +="'-1');\n";										
+										String heureSans = heureSansRetour[0]+"-"+heureSansRetour[1];
+										insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"-1",heureSans);									
 									}
 								}else{
 									if(planing.getAutre().equals("Repos")){
 										//on met tous les champs de la table planning_plage a null	
-										insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
-										insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
-										insert_plageHoraire+=" where pj.id_planning_salarie=ps.id_planning_salarie";
-										insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
-										insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
-										insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-										insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
-										insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
-										insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
-										insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
-										insert_plageHoraire +="''," +"''" +",";
-										insert_plageHoraire +="'-2');\n";
-										
-										insert_planingJour ="";
-										insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
-										insert_planingJour +="unite,presence_matin,presence_apm,type_contenu,heures_effectuees) values (";
-										//recuperartion de id_planning_salarie
-										insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
-										insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
-										insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-										insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
-										insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
-										//recuperation de la date du jour
-										insert_planingJour +="'"+planing.getDate()+"',";
-										//recuperation de id_planning_type_jour
-										insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
-										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-										insert_planingJour +=" and pt.fin is null),";
-										//recuperation de contractuel
-										insert_planingJour +="(select ptj.contractuel from planning_type_jour ptj,planning_type pt, contrat c ";
-										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-										insert_planingJour +=" and pt.fin is null),";
-										//recuperation de id_planning_plage
-										insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
-										insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
-										insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
-										insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-										insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
-										//recuperation de l'unite H ou J
-										insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
-										//presence matin, soir et Normal N ou Abscence A
-										insert_planingJour +="-2,-2,'N',";
-										//recuperation de nombre d'heure travailler en minuite 
-										insert_planingJour +=planing.getNombre_heure();
-										insert_planingJour +=");";
-
-										insertionPaning.add(insert_planingJour);
-										
+										insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"-2","");
+										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-2","N",planing.getNombre_heure(),planing.getDate());
+									
 									}
 									
 									if(planing.getAutre().equals("Journée")){
-										insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
-										insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
-										insert_plageHoraire+=" where pj.id_planning_salarie=ps.id_planning_salarie";
-										insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
-										insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
-										insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
-										insert_plageHoraire+=" and c.numero_contrat like '"+ligne.getId_contrat();
-										insert_plageHoraire+="' and pv.numero_point_vente like '"+ligne.getPoint_vente()+"'";
-										insert_plageHoraire+=" and ppv.date_debut ='"+ firstLineAfter.get(0).split(" ")[2] +"'";
-										insert_plageHoraire+=" and pj.date = "+"'"+planing.getDate()+"'),";
-										insert_plageHoraire +="'09:00:00'," +"'17:00:00'" +",";
-										insert_plageHoraire +="'-1');\n";
-										
-										insert_planingJour ="";
-										insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
-										insert_planingJour +="unite,presence_matin,presence_apm,type_contenu,heures_effectuees) values (";
-										//recuperartion de id_planning_salarie
-										insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
-										insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
-										insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-										insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
-										insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
-										//recuperation de la date du jour
-										insert_planingJour +="'"+planing.getDate()+"',";
-										//recuperation de id_planning_type_jour
-										insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
-										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-										insert_planingJour +=" and pt.fin is null),";
-										//recuperation de contractuel
-										insert_planingJour +="(select ptj.contractuel from planning_type_jour ptj,planning_type pt, contrat c ";
-										insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-										insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-										insert_planingJour +="and ptj.numero_jour="+planing.getNum_jour() +" ";
-										insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-										insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-										insert_planingJour +=" and pt.fin is null),";
-										//recuperation de id_planning_plage
-										insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
-										insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
-										insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
-										insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-										insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
-										//recuperation de l'unite H ou J
-										insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
-										//presence matin, soir et Normal N ou Abscence A
-										insert_planingJour +="-1,-1,'N',";
-										//recuperation de nombre d'heure travailler en minuite 
-										insert_planingJour +=planing.getNombre_heure();
-										insert_planingJour +=");";
-										insertionPaning.add(insert_planingJour);
-										
+										insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"-2","9:00-17:00");
+										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-1","N",(planing.getNombre_heure()/60)/60,planing.getDate());
 									}
 									//"Journée" "Repos"
 									if(!"Journée".equals(planing.getAutre()) && !"Repos".equals(planing.getAutre())){
@@ -638,15 +479,11 @@ public class ReedTheFolder {
 									}
 		
 								}
-		
-								
-								insertionPlage.add(insert_plageHoraire);
-								
 								
 								insert_evJour +="insert into ev_jour(id_planning_jour,id_element,code_element,valeur) values (";
 								insert_evJour +="select id_planning_jour from planning_jour where id_planning_salarie in (select id_planning_salarie from planning_salarie where id_salarie='"+ligne.getId_contrat();
 								insert_evJour +="' and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in (";
-								insert_evJour +="select id_point_vente from point_vente where numero_point_vente like '"+ligne.getPoint_vente() +"') and date_debut ='"+firstLineAfter.get(0).split(" ")[2] +"')) and date = " +"'"+planing.getDate()+"',";
+								insert_evJour +="select id_point_vente from point_vente where numero_point_vente like '"+ligne.getPoint_vente() +"') and date_debut ='"+datDebutSemaint +"')) and date = " +"'"+planing.getDate()+"',";
 								insert_evJour +="'000','CODE','000');\n";
 								
 								insertion_evJour.add(insert_evJour);
@@ -655,9 +492,9 @@ public class ReedTheFolder {
 							
 							for(String typeAbscence :typeAbscenceMapPlanning.keySet()){
 								List<Date> listeDate = typeAbscenceMapPlanning.get(typeAbscence);
-								Date dateDebut = listeDate.get(0);
+								dateDebut = listeDate.get(0);
 								Date dateFin = null;
-								String insert_planingPlage;
+								
 								int typeRetrouve;
 								int j = 0;
 								for(int i=0;i<listeDate.size();i++){
@@ -676,130 +513,19 @@ public class ReedTheFolder {
 										 j++;
 									}else{
 										if(dateFin == null){
-											insert_planingPlage = "<!-- Planing plage pour chaque jour de la semaine " +numSemaine +" pour l'employe "+ nom +" dont la date de debut est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+" et la date de fin est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+" -->\n";
-											insert_planingPlage +="insert into planning_plage (debut,fin,id_motif,unite,duree_semaine_0,id_salarie,id_point_vente) values (";
-											insert_planingPlage +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
-											insert_planingPlage +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
-											typeRetrouve = TypeAbscence.get(typeAbscence);
-											if(typeRetrouve == -1){
-												String exception = "Le type d'abscence " +typeAbscence +" ne peut pas etre traiter pour l'employe " + nom + "de la semaine du "+numSemaine +" et de la date du " + new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut);
-												listeExeption.add(exception);
-												listeExeption.add(exceptions);
-											}else{
-												insert_planingPlage +=typeRetrouve+",";
-												insert_planingPlage +="'"+planningDTO.get(nom).getUnite() +"',";
-												insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"',";
-												insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +ligne.getPoint_vente();
-												insert_planingPlage +="');";
-												insertion_planingPlage.add(insert_planingPlage);
-
-												insert_planingJour ="";
-												insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
-												insert_planingJour +="unite,presence_matin,presence_apm,type_contenu,heures_effectuees) values (";
-												//recuperartion de id_planning_salarie
-												insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
-												insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
-												insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-												insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
-												insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
-												//recuperation de la date du jour
-												insert_planingJour +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
-												//recuperation de id_planning_type_jour
-												insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
-												insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-												insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-												insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-												insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-												insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-												insert_planingJour +=" and pt.fin is null),";
-												//recuperation de contractuel
-												insert_planingJour +="(select ptj.contractuel from planning_type_jour ptj,planning_type pt, contrat c ";
-												insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-												insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-												insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-												insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-												insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-												insert_planingJour +=" and pt.fin is null),";
-												//recuperation de id_planning_plage
-												insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
-												insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
-												insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
-												insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-												insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
-												//recuperation de l'unite H ou J
-												insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
-												//presence matin, soir et Normal N ou Abscence A
-												insert_planingJour +=typeRetrouve+"," +typeRetrouve+",'A',";
-												//recuperation de nombre d'heure travailler en minuite 
-												insert_planingJour +=nombreHeure;
-												insert_planingJour +=");";
-												
-												insertionPaning.add(insert_planingJour);
-												System.out.println("La date de debut est "+ new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut) +" et la date de fin est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut));
+											String datDF  = new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut);
+											insert_planingPlage(numSemaine,nom, datDF,datDF,typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
+											if(verificationJour){
+												insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut));
+												verificationJour = false;
 											}
 										}else{
-											insert_planingPlage = "<!-- Planing plage pour chaque jour de la semaine " +numSemaine +" pour l'employe "+ nom +" dont la date de debut est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+" et la date de fin est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin)+" -->\n";
-											insert_planingPlage +="insert into planning_plage (debut,fin,id_motif,unite,duree_semaine_0,id_salarie,id_point_vente) values (";
-											insert_planingPlage +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
-											insert_planingPlage +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin)+"',";
-											typeRetrouve = TypeAbscence.get(typeAbscence);
-											if(typeRetrouve == -1){
-												String exception = "Le type d'abscence " +typeAbscence +" ne peut pas etre traiter pour l'employe " + nom + "de la semaine du "+numSemaine +" et de la date du " + new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut);
-												listeExeption.add(exceptions);
-												listeExeption.add(exception);
-											}else{
-											insert_planingPlage +=typeRetrouve+",";
-											insert_planingPlage +="'"+planningDTO.get(nom).getUnite() +"',";
-											insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"',";
-											insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +ligne.getPoint_vente();
-											insert_planingPlage +="');";
-											insertion_planingPlage.add(insert_planingPlage);
 											
-											insert_planingJour ="";
-											insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
-											insert_planingJour +="unite,presence_matin,presence_apm,type_contenu,heures_effectuees) values (";
-											//recuperartion de id_planning_salarie
-											insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
-											insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
-											insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-											insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
-											insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
-											//recuperation de la date du jour
-											insert_planingJour +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
-											//recuperation de id_planning_type_jour
-											insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
-											insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-											insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-											insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-											insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-											insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-											insert_planingJour +=" and pt.fin is null),";
-											//recuperation de contractuel
-											insert_planingJour +="(select ptj.contractuel from planning_type_jour ptj,planning_type pt, contrat c ";
-											insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-											insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-											insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-											insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-											insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-											insert_planingJour +=" and pt.fin is null),";
-											//recuperation de id_planning_plage
-											insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
-											insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
-											insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
-											insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-											insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
-											//recuperation de l'unite H ou J
-											insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
-											//presence matin, soir et Normal N ou Abscence A
-											insert_planingJour +=typeRetrouve+"," +typeRetrouve+",'A',";
-											//recuperation de nombre d'heure travailler en minuite 
-											insert_planingJour +=nombreHeure;
-											insert_planingJour +=");";
-											insertionPaning.add(insert_planingJour);
-											
-											System.out.println("La date de debut est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut) +" et la date de fin est "+ new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin));
-										}
-										
+											insert_planingPlage(numSemaine,nom, new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut),new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin),typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
+											if(verificationJour){
+												insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut));
+												verificationJour = false;
+											}
 									 }
 										if(i < listeDate.size()-1){
 											dateDebut = listeDate.get(i+1);
@@ -808,67 +534,13 @@ public class ReedTheFolder {
 								}
 								
 								if(j == listeDate.size()){
-									insert_planingPlage = "<!-- Planing plage pour chaque jour de la semaine " +numSemaine +" pour l'employe "+ nom +" dont la date de debut est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+" et la date de fin est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin)+"  -->\n";
-									insert_planingPlage +="insert into planning_plage (debut,fin,id_motif,unite,duree_semaine_0,id_salarie,id_point_vente) values (";
-									insert_planingPlage +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
-									insert_planingPlage +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin)+"',";
-									typeRetrouve = TypeAbscence.get(typeAbscence);
-									if(typeRetrouve == -1){
-										String exception = "Le type d'abscence " +typeAbscence +" ne peut pas etre traiter pour l'employe " + nom + "de la semaine du "+numSemaine +" et de la date du " + new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut);
-										listeExeption.add(exceptions);
-										listeExeption.add(exception);
-									}else{
-									insert_planingPlage +="'"+planningDTO.get(nom).getUnite() +"',";
-									insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"',";
-									insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +ligne.getPoint_vente();
-									insert_planingPlage +="');";
-									insertion_planingPlage.add(insert_planingPlage);
 									
-									//a modifier mettre une boucle
-									insert_planingJour ="";
-									insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
-									insert_planingJour +="unite,presence_matin,presence_apm,type_contenu,heures_effectuees) values (";
-									//recuperartion de id_planning_salarie
-									insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
-									insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
-									insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
-									insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ ligne.getId_contrat();
-									insert_planingJour +="') and pv.numero_point_vente like '"+ligne.getPoint_vente() +"' and ppv.date_debut='"+ firstLineAfter.get(0).split(" ")[2] +"'),";
-									//recuperation de la date du jour
-									insert_planingJour +="'"+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut)+"',";
-									//recuperation de id_planning_type_jour
-									insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
-									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-									insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-									insert_planingJour +=" and pt.fin is null),";
-									//recuperation de contractuel
-									insert_planingJour +="(select ptj.contractuel from planning_type_jour ptj,planning_type pt, contrat c ";
-									insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
-									insert_planingJour +="and c.id_contrat=pt.id_contrat ";
-									insert_planingJour +="and ptj.numero_jour="+numJour +" ";
-									insert_planingJour +="and c.numero_contrat like '" +ligne.getId_contrat() +"' ";
-									insert_planingJour +="and pt.debut <='"+firstLineAfter.get(0).split(" ")[2]+"'";
-									insert_planingJour +=" and pt.fin is null),";
-									//recuperation de id_planning_plage
-									insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
-									insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
-									insert_planingJour +="and pg.debut ='"+firstLineAfter.get(0).split(" ")[2]+"'";;
-									insert_planingJour +=" and pv.numero_point_vente like '"+ligne.getPoint_vente();
-									insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat() +"')),";;
-									//recuperation de l'unite H ou J
-									insert_planingJour +="'"+planningDTO.get(nom).getUnite() +"',";
-									//presence matin, soir et Normal N ou Abscence A
-									insert_planingJour +=typeRetrouve+"," +typeRetrouve+",'A',";
-									//recuperation de nombre d'heure travailler en minuite 
-									insert_planingJour +=nombreHeure;
-									insert_planingJour +=");";
-									insertionPaning.add(insert_planingJour);
-									
-									System.out.println("La date de debut est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut) +" et la date de fin est "+new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin));
-								}
+									insert_planingPlage(numSemaine,nom, new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut),new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin),typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
+									if(verificationJour){
+										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut));
+										verificationJour = false;
+									}
+
 							}
 						}
 							
@@ -885,18 +557,19 @@ public class ReedTheFolder {
 								}
 							}
 							
-							//listeInsertion.add(insertionPaning.get(insertionPaning.size()-1));
-							listeInsertion.add(insertionPlage.get(insertionPlage.size()-1));
+							if(!insertionPlage.isEmpty()) {
+								for(String requete : insertionPlage){
+									listeInsertion.add(requete);
+								}
+							}
+							
 							listeInsertion.add(insertion_evJour.get(insertion_evJour.size()-1));
 				
 							insertionPaning = null;
 							insertionPlage = null;
 							insertion_evJour = null;				
 						}
-						
-				
-				
-				
+
 			}
 			
 			}
@@ -904,6 +577,128 @@ public class ReedTheFolder {
 		}
 		
 		
+	}
+	
+	/***
+	 * génére la requete pour planning jour dans la base BPWeb
+	 * @param id_contrat
+	 * @param point_vent
+	 * @param unite (H->pour heure et J-> Pour Jour)
+	 * @param typeAbsence (S'il est absence il prend le code, sil est en Repos -2 et -1 sil a travaillé journée est considére comme travailler)
+	 * @param type_contenu (N->normal sil es en Repos ou journéé et A s'il est absent)
+	 * @param heures_effectuees
+	 * @param date la date du jour
+	 * 
+	 */
+	static void insert_planingJour(String id_contrat,String point_vent,String unite,String typeAbsence,String type_contenu,Integer heures_effectuees,String date){
+		
+		insert_planingJour ="";
+		insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
+		insert_planingJour +="unite,presence_matin,presence_apm,type_contenu,heures_effectuees) values (";
+		//recuperartion de id_planning_salarie
+		insert_planingJour +="(select id_planning_salarie from planning_salarie ps, planning_point_vente ppv,point_vente pv ";
+		insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
+		insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
+		insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ id_contrat;
+		insert_planingJour +="') and pv.numero_point_vente like '"+point_vent +"' and ppv.date_debut='"+ datDebutSemaint +"'),";
+		//recuperation de la date du jour
+		insert_planingJour +="'"+date+"',";
+		//recuperation de id_planning_type_jour
+		insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
+		insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
+		insert_planingJour +="and c.id_contrat=pt.id_contrat ";
+		insert_planingJour +="and ptj.numero_jour="+numJour +" ";
+		insert_planingJour +="and c.numero_contrat like '" +id_contrat +"' ";
+		insert_planingJour +="and pt.debut <='"+datDebutSemaint+"'";
+		insert_planingJour +=" and pt.fin is null),";
+		//recuperation de contractuel
+		insert_planingJour +="(select ptj.contractuel from planning_type_jour ptj,planning_type pt, contrat c ";
+		insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
+		insert_planingJour +="and c.id_contrat=pt.id_contrat ";
+		insert_planingJour +="and ptj.numero_jour="+numJour +" ";
+		insert_planingJour +="and c.numero_contrat like '" +id_contrat +"' ";
+		insert_planingJour +="and pt.debut <='"+datDebutSemaint+"'";
+		insert_planingJour +=" and pt.fin is null),";
+		//recuperation de id_planning_plage
+		insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
+		insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
+		insert_planingJour +="and pg.debut ='"+datDebutSemaint+"'";;
+		insert_planingJour +=" and pv.numero_point_vente like '"+point_vent;
+		insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+id_contrat +"')),";;
+		//recuperation de l'unite H ou J
+		insert_planingJour +="'"+unite +"',";
+		//presence matin, soir et Normal N ou Abscence A
+		insert_planingJour +=typeAbsence+"," +typeAbsence+",'"+type_contenu+"',";
+		//recuperation de nombre d'heure travailler en minuite 
+		insert_planingJour +=heures_effectuees;
+		insert_planingJour +=");";
+		insertionPaning.add(insert_planingJour);
+	}
+	/***
+	 * génére la requete pour plage horeaire
+	 * @param id_contrat 
+	 * @param point_vent
+	 * @param dateDebut le debut de la semaine
+	 * @param date la date du jour
+	 * @param typeAbsence (S'il est absence il prend le code, sil est en Repos -2 et -1 sil a travaillé journée est considére comme travailler)
+	 * @param heur le creneau horaire dans la journée
+	 */
+	
+	static void insert_plageHoraire(String id_contrat,String point_vent,String dateDebut,String date,String typeAbsence,String heur){
+		
+		insert_plageHoraire="";
+		insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
+		insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
+		insert_plageHoraire+=" where pj.id_planning_salarie=ps.id_planning_salarie";
+		insert_plageHoraire+=" and ppv.id_planning_point_vente = ps.id_planning_point_vente";
+		insert_plageHoraire+=" and ps.id_salarie = c.id_salarie";
+		insert_plageHoraire+=" and pv.id_point_vente = ppv.id_point_vente";
+		insert_plageHoraire+=" and c.numero_contrat like '"+id_contrat;
+		insert_plageHoraire+="' and pv.numero_point_vente like '"+point_vent+"'";
+		insert_plageHoraire+=" and ppv.date_debut ='"+ dateDebut +"'";
+		insert_plageHoraire+=" and pj.date = "+"'"+date+"'),";
+		if(heur.contains("-")){
+			insert_plageHoraire +="'"+heur.split("-")[0].replaceAll("h", ":")+"'," +"'"+heur.split("-")[1].replaceAll("h", ":")+"'" +",";
+		}else{
+			insert_plageHoraire +="''," +"''" +",";
+		}
+		insert_plageHoraire +="'"+typeAbsence+"');";
+		
+		insertionPlage.add(insert_plageHoraire);
+	}
+	
+	/**
+	 * génére la requete pour planning plage
+	 * @param numSemaine le numero de la semaine
+	 * @param nom le nom de l'employe
+	 * @param dateDebut date de début de l'abscence
+	 * @param dateFin date de fin de l'abscence
+	 * @param typeAbscence (S'il est absence il prend le code, sil est en Repos -2 et -1 sil a travaillé journée est considére comme travailler)
+	 * @param unite (H->pour heure et J-> Pour Jour)
+	 * @param id_contrat
+	 * @param point_vent
+	 */
+	
+	static void insert_planingPlage(int numSemaine,String nom, String dateDebut,String dateFin,String typeAbscence,String unite,String id_contrat,String point_vent){
+		insert_planingPlage = "<!-- Planing plage pour chaque jour de la semaine " +numSemaine +" pour l'employe "+ nom +" dont la date de debut est "+dateDebut+" et la date de fin est "+dateFin+" -->\n";
+		insert_planingPlage +="insert into planning_plage (debut,fin,id_motif,unite,duree_semaine_0,id_salarie,id_point_vente) values (";
+		insert_planingPlage +="'"+dateDebut+"',";
+		insert_planingPlage +="'"+dateFin+"',";
+		typeRetrouve = TypeAbscence.get(typeAbscence);
+		if(typeRetrouve == -1){
+			String exception = "Le type d'abscence " +typeAbscence +" ne peut pas etre traiter pour l'employe " + nom + "de la semaine du "+numSemaine +" et de la date du " + dateDebut;
+			listeExeption.add(exception);
+			listeExeption.add(exceptions);
+		}else{
+			insert_planingPlage +=typeRetrouve+",";
+			insert_planingPlage +="'"+unite +"',";
+			insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+id_contrat +"',";
+			insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +point_vent;
+			insert_planingPlage +="');";
+			insertion_planingPlage.add(insert_planingPlage);
+			verificationJour = true;
+			System.out.println("La date de debut est "+ dateDebut +" et la date de fin est "+dateFin);
+		}
 	}
 	
 	
@@ -1045,7 +840,7 @@ public class ReedTheFolder {
            Iterator cells = row.cellIterator();
            while (cells.hasNext()) {
                Cell cell = (Cell) cells.next();
-               firstLine.add(cell.toString());
+               firstLine.add(cell.toString()); 
            }
        }
 		
@@ -1067,15 +862,6 @@ public class ReedTheFolder {
 		Xcelite xcelite = new Xcelite() ;    
 		XceliteSheet sheet = xcelite.createSheet("contrats");
 		SheetWriter<ContratSupprimer> writer = sheet.getBeanWriter(ContratSupprimer.class);
-//		List<ContratSupprimer> contratSupprimer=new ArrayList< ContratSupprimer>();
-//		ContratSupprimer contratSup = new ContratSupprimer();
-//		contratSup.setEnseigne("33");
-//		contratSup.setId_contrat(2222);
-//		contratSup.setMatricule(12548);
-//		contratSup.setNom("DIOP");
-//		contratSup.setPrenom("Ousmane");
-//		contratSup.setPoint_vente("aduneo2017");
-//		contratSupprimer.add(contratSup);
 		writer.write(contratSupprimer); 
 		File file = new File(fileName);
 		
