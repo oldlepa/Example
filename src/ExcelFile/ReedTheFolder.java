@@ -1,11 +1,21 @@
 package ExcelFile;
 
 import java.io.*;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.filechooser.FileSystemView;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -84,25 +94,59 @@ public class ReedTheFolder {
 	static String insert_plageHoraire;
 	
 	static ArrayList<String> insertionPlage;
+	static ArrayList<String> insertion_evJour;
 	
-	static String insert_planingPlage,exceptions;
+	static String insert_planingPlage,exceptions,insert_ev_hebdo,insert_evJour,insert_planning_point_vente;
+
 	
 	static boolean verificationJour = false;
 	
 	static ArrayList<String> insertion_planingPlage;
 	
+	static String information;
+
+	
+
+	
 	
 	public static void main(String[] args) throws Exception {
-	 
-		 System.out.println("**************************************DEBUT DU TRAITEMENT*************************************");
+
+		 information="";
+		
+		
+		information +="**************************************DEBUT DU TRAITEMENT************************************* \n";
+		
+		 long startTime = System.nanoTime();
+		 
+		 SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy:MM:ddHH:mm:ss");
+	     String dateText = simpleDate.format(startTime);
+	     
+	     SimpleDateFormat simpleDateformat = new SimpleDateFormat("yyyy-MM-dd");
+		 
+		information +="Le programme a débuté à :" +startTime +"\n";
+		 
+		information +="Le programme a débuté à :" +dateText +"\n";
+		 
 		 TreeMap<String, File> mapFile = new TreeMap<String, File>();
 	    
 	    Planing_jour planing1 = null;
 	    PlanningDTO planingDTO = null;
 	    String repertoire1 ="C:\\Users\\odiop\\Desktop\\BPWeb",repertoire2="C:\\Users\\odiop\\Desktop\\Contrats_supprimes.xlsx";
+	    
+	    JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+		int returnValue = jfc.showOpenDialog(null);
+		File selectedFile = null;
+		if (returnValue == JFileChooser.APPROVE_OPTION) {
+			selectedFile = jfc.getSelectedFile();
+			information +=(selectedFile.getAbsolutePath());
+		}else{
+			System.err.println("La génération est annulée");
+			System.exit(0);
+		}
 
 	    
-	    Collection<ContratSupprimer> contratCollection = readFileExcelContratSupprimer(repertoire2);
+	    //Collection<ContratSupprimer> contratCollection = readFileExcelContratSupprimer(repertoire2);
+	    Collection<ContratSupprimer> contratCollection = readFileExcelContratSupprimer(selectedFile.toString());
 	    
 	    
 	    File repertoir = new File(repertoire1);
@@ -115,6 +159,7 @@ public class ReedTheFolder {
 	    
 	    ReedTheFolder red = new ReedTheFolder();
 	    for(ContratSupprimer numMangasin : contratCollection){	
+	    	
 	    	SortedMap<String, File> sortedMap = mapFile.subMap(numMangasin.getPoint_vente(), numMangasin.getPoint_vente() + Character.MAX_VALUE);
 	    	if(sortedMap.isEmpty()){
 	    		continue;
@@ -134,6 +179,8 @@ public class ReedTheFolder {
 			    	
 			    	mapListeTable = new HashMap<String,List<String>>();
 			    	
+			    	HashMap<String, List<String>> mapListeTableTest = new HashMap<String,List<String>>();
+			    	
 			    	//recherche du fichier dans la map des fichier
 			    	excelFilePath = sortedMap.get(cleSorted).getPath();
 			    	//recupere la premiere colonne (les noms)
@@ -148,6 +195,9 @@ public class ReedTheFolder {
 			    	
 			    	mapListeTable = XlsxRead_2.getvalue_1(sortedMap.get(cleSorted).getAbsolutePath(),firstColonneAfter.size()+1);
 
+			    	mapListeTableTest = XlsxRead_2.getvalue_1(sortedMap.get(cleSorted).getAbsolutePath(),firstColonne.size()+1);
+			    	
+			    	
 			    	for(String jour : mapListeTable.get("Jour")){
 			    		firstLineAfter.add(jour);
 			    	}
@@ -203,9 +253,13 @@ public class ReedTheFolder {
 			    			
 			    			planing1 = new Planing_jour();
 							planing1.setNum_jour(ListeJour.get(firstLineAfter.get(k).split(" ")[0]));
-							planing1.setDate(firstLineAfter.get(k).split(" ")[2]);
+							String []transDateTab = firstLineAfter.get(k).split(" ")[2].split("/");
+							String transDate = transDateTab[2]+"-"+transDateTab[1]+"-"+transDateTab[0];
+							planing1.setDate(transDate);
 							planing1.setAutre(horaire);
-							planing1.setFirstDayWeek(firstLineAfter.get(0).split(" ")[2]);
+							transDateTab = firstLineAfter.get(0).split(" ")[2].split("/");
+							transDate = transDateTab[2]+"-"+transDateTab[1]+"-"+transDateTab[0];
+							planing1.setFirstDayWeek(transDate);
 			    			if(horaire.contains("-")){
 			    				String tabHeure[] = horaire.split(" ");
 			    				String []tab = new String[tabHeure.length];
@@ -262,17 +316,48 @@ public class ReedTheFolder {
 		   recherchePlaningPersonne(contratSupprimer);   
 	   } 
 	   
-	   if (!listeInsertion.isEmpty()) writeSQLFile(listeInsertion,"requeteGenere.sql");
+	   String chemin="";
+	   
+	   try {
+			chemin = createFile("test");
+		} catch (IOException e) {
+			System.err.println("Le fichier ne peut pas être créé");
+			e.printStackTrace();
+		}
+	   
+	   System.out.println("Une interface de récapitulatif sera affiché.");
+	   
+	   if (!listeInsertion.isEmpty()) writeSQLFile(listeInsertion,chemin);
 	   if (!listeExeption.isEmpty()) writeSQLFile(listeExeption,"ExceptionFile.txt");
 	   if (!listeRejetContrat.isEmpty()) writeExcelContrat(listeRejetContrat);
 	   
-	   System.out.println("**************************************FIN DU TRAITEMENT*************************************");
+	   long endTime = System.nanoTime();
+	   	   
+	  information +="Le programme a débuté à :" +simpleDate.format(endTime) +"\n";
 	   
-	    
+	   long duration = (endTime - startTime);
+	   
+	  information +="La duré à la fin de l'execution est :" +simpleDate.format(duration)+"\n";
+	   
+	  information +="**************************************FIN DU TRAITEMENT*************************************\n";
+	   
+	  createPanel(information);
 	}
 	
 	
+	public static void createPanel(String information){
+		JTextArea textArea = new JTextArea(20,25);
+	    textArea.setColumns(50);
+	    textArea.setLineWrap(true);
+	    textArea.setWrapStyleWord(true);
+	    textArea.append(information);
+	    textArea.setSize(textArea.getPreferredSize().width, 1);
+	    JOptionPane.showMessageDialog(null, new JScrollPane( textArea), "Information!",
+	        JOptionPane.WARNING_MESSAGE);
+	}
 	
+	
+
 	
 	
 	
@@ -286,6 +371,7 @@ public class ReedTheFolder {
  */
 	static void recherchePlaningPersonne(ContratSupprimer ligne) throws Exception{
 		
+		System.out.println("Recherche planning personne.");
 		
 		HashMap<String,ArrayList<Planing_jour>> planing_jour;
 		List<Date> date = null;
@@ -296,6 +382,7 @@ public class ReedTheFolder {
 		numJour = 0;
 		String dateJour = null;
 		String nom = ligne.getPrenom()+" "+ligne.getNom();
+		Map<String, Integer> MapJourDate = null;
 		
 
 		for(int numSemaine=12; numSemaine<19; numSemaine++){
@@ -333,41 +420,38 @@ public class ReedTheFolder {
 							listeExeption.add(exceptions);
 							if(!listeRejetContrat.contains(ligne)) listeRejetContrat.add(ligne);							
 						}else{			
-						
+
 							datDebutSemaint = planingListe.get(0).getFirstDayWeek();
 							
-							String insert_planingSalarie ="<!--Creation du planning salarie de la semaine " +numSemaine +" pour l'employé " + nom;
-							insert_planingSalarie += " --> \n";
-							insert_planingSalarie += "INSERT INTO planning_salarie(id_salarie,id_planning_point_vente,termine) VALUES ( select id_salarie from contrat where numero_contrat like '" +ligne.getId_contrat() +"',";
-							insert_planingSalarie +="select id_planning_point_vente from planning_point_vente where id_point_vente in";
-							insert_planingSalarie +=" (select id_point_vente from point_vente where numero_point_vente like "+ligne.getPoint_vente() +") and date_debut = '"+ datDebutSemaint+"',";
-							insert_planingSalarie +="true);\n";
+							String insert_planingSalarie ="\n/*Creation du planning salarie de la semaine " +numSemaine +" pour l'employé " + nom;
+							insert_planingSalarie += " */ \n";
+							insert_planingSalarie += "INSERT INTO planning_salarie(id_salarie,id_planning_point_vente,termine) VALUES ( (select id_salarie from contrat where numero_contrat like '" +ligne.getId_contrat() +"'),";
+							insert_planingSalarie +="(select id_planning_point_vente from planning_point_vente where id_point_vente in";
+							insert_planingSalarie +=" (select id_point_vente from point_vente where numero_point_vente like '"+ligne.getPoint_vente() +"') and date_debut = '"+ datDebutSemaint+"'),";
+							insert_planingSalarie +="true);";
 							
 							listeInsertion.add(insert_planingSalarie);
 							
-							String insert_ev_hebdo = "<!-- Création de l'évenement Hebdo de l'employe "+ nom +"pour la semaine du " + numSemaine +" --> \n";
-							insert_ev_hebdo +="insert into ev_hebdo(id_planning_salarie,id_element,code_element,valeur) values (";
-							insert_ev_hebdo +="select id_planning_salarie from planning_salarie where id_salarie in (select id_salarie from contrat where numero_contrat like '"+ligne.getId_contrat();
-							insert_ev_hebdo +="') and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in";
-							insert_ev_hebdo +=" (select id_point_vente from point_vente where numero_point_vente like " + ligne.getPoint_vente() +" ) and date_debut = '"+ datDebutSemaint +"'), '000', 'CODE','000'";
-							insert_ev_hebdo +=");\n";
-							listeInsertion.add(insert_ev_hebdo);
-							
-							
-							insert_planingJour = "\n<!-- Requete pour tous les jours de la semaine " +numSemaine +" pour l'employé " + nom +"  --> \n";
+							insert_ev_hebdo(nom,numSemaine,ligne.getId_contrat(), ligne.getPoint_vente(),datDebutSemaint);
+
+							insert_planingJour = "\n/* Requete pour tous les jours de la semaine " +numSemaine +" pour l'employé " + nom +"  */ \n";
 														
-							insert_plageHoraire ="\n<!-- toutes les plages horaires du salarié "+ nom +" pour de la semaine " +numSemaine +" --> \n";
-						
-							String insert_evJour ="\n<!-- pour tous les jours de la semaine du salarié "+ nom +" --> \n";
-												
+							insert_plageHoraire ="\n/* toutes les plages horaires du salarié "+ nom +" pour de la semaine " +numSemaine +" */ \n";
+							
+							insert_evJour ="\n/* pour tous les jours de la semaine du salarié "+ nom +" */ \n";
+																		
 							insertionPaning = new ArrayList<>();
 							insertionPaning.add(insert_planingJour);
 							
 							insertionPlage = new ArrayList<>();
 							insertionPlage.add(insert_plageHoraire);
 							
-							ArrayList<String> insertion_evJour = new ArrayList<>();
+							insertion_evJour = new ArrayList<>();
+							insertion_evJour.add(insert_evJour);
+							
 							insertion_planingPlage = new ArrayList<>();
+							
+							MapJourDate = new HashMap<String, Integer>();
 							
 							for(Planing_jour planing :planingListe){
 								
@@ -377,12 +461,13 @@ public class ReedTheFolder {
 								nombreHeure = planing.getNombre_heure();
 								numJour = planing.getNum_jour();
 								dateJour = planing.getDate();
+								MapJourDate.put(dateJour, numJour);
 								if(nombreHeure == null) nombreHeure = null;
 																			
 								if(planing.getAutre().contains("-")){
 									
 									
-									insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-1","N",(planing.getNombre_heure()/60)/60,planing.getDate());
+									insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-1","N",(planing.getNombre_heure()/60)/60,planing.getDate(),numJour,planing.getDate());
 							
 									if(planing.getAutre().contains(" ")){
 										heure = planing.getAutre().split(" ");
@@ -441,19 +526,19 @@ public class ReedTheFolder {
 								}else{
 									if(planing.getAutre().equals("Repos")){
 										//on met tous les champs de la table planning_plage a null	
-										insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"-2","");
-										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-2","N",planing.getNombre_heure(),planing.getDate());
+										insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"-2","9:00-17:00");
+										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-2","N",planing.getNombre_heure(),planing.getDate(),numJour,planing.getDate());
 									
 									}
 									
 									if(planing.getAutre().equals("Journée")){
 										insert_plageHoraire(ligne.getId_contrat(),ligne.getPoint_vente(),datDebutSemaint,planing.getDate(),"-2","9:00-17:00");
-										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-1","N",(planing.getNombre_heure()/60)/60,planing.getDate());
+										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"-1","N",(planing.getNombre_heure()/60)/60,planing.getDate(),numJour,planing.getDate());
 									}
 									//"Journée" "Repos"
 									if(!"Journée".equals(planing.getAutre()) && !"Repos".equals(planing.getAutre())){
 										String typeAbscence = planing.getAutre();
-										 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+										 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 											typeAbscence = typeAbscence.replace("\n", " ").replace(".", "_").replace("/", "_").replaceAll(" ", "_");
 											 try {
 										            Date dateType = formatter.parse(planing.getDate());
@@ -478,13 +563,7 @@ public class ReedTheFolder {
 		
 								}
 								
-								insert_evJour +="insert into ev_jour(id_planning_jour,id_element,code_element,valeur) values (";
-								insert_evJour +="select id_planning_jour from planning_jour where id_planning_salarie in (select id_planning_salarie from planning_salarie where id_salarie='"+ligne.getId_contrat();
-								insert_evJour +="' and id_planning_point_vente in (select id_planning_point_vente from planning_point_vente where id_point_vente in (";
-								insert_evJour +="select id_point_vente from point_vente where numero_point_vente like '"+ligne.getPoint_vente() +"') and date_debut ='"+datDebutSemaint +"')) and date = " +"'"+planing.getDate()+"',";
-								insert_evJour +="'000','CODE','000');\n";
-								
-								insertion_evJour.add(insert_evJour);
+								insert_ev_jour(nom,ligne.getPoint_vente(),ligne.getId_contrat(),datDebutSemaint,planing.getDate());
 								
 							}
 							
@@ -511,17 +590,19 @@ public class ReedTheFolder {
 										 j++;
 									}else{
 										if(dateFin == null){
-											String datDF  = new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut);
+											String datDF  = new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateDebut);
 											insert_planingPlage(numSemaine,nom, datDF,datDF,typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
 											if(verificationJour){
-												insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut));
+												insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateDebut),MapJourDate.get(datDF),datDF);
 												verificationJour = false;
 											}
 										}else{
 											
-											insert_planingPlage(numSemaine,nom, new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut),new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin),typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
+											insert_planingPlage(numSemaine,nom, new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateDebut),new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateFin),typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
 											if(verificationJour){
-												insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut));
+												for(Date datePourJour :listeDate){
+													insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(listeDate.get(0)),MapJourDate.get(new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(datePourJour)),new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(datePourJour));
+												}
 												verificationJour = false;
 											}
 									 }
@@ -533,9 +614,9 @@ public class ReedTheFolder {
 								
 								if(j == listeDate.size()){
 									
-									insert_planingPlage(numSemaine,nom, new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut),new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateFin),typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
+									insert_planingPlage(numSemaine,nom, new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateDebut),new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateFin),typeAbscence,planningDTO.get(nom).getUnite(),ligne.getId_contrat(),ligne.getPoint_vente());
 									if(verificationJour){
-										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("dd/MM/yyyy",Locale.getDefault()).format(dateDebut));
+										insert_planingJour(ligne.getId_contrat(),ligne.getPoint_vente(),planningDTO.get(nom).getUnite(),"'"+TypeAbscence.get(typeAbscence)+"'","A",nombreHeure,new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateDebut),MapJourDate.get(new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateDebut)),new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault()).format(dateDebut));
 										verificationJour = false;
 									}
 
@@ -561,7 +642,13 @@ public class ReedTheFolder {
 								}
 							}
 							
-							listeInsertion.add(insertion_evJour.get(insertion_evJour.size()-1));
+							if(!insertion_evJour.isEmpty()) {
+								for(String requete : insertion_evJour){
+									listeInsertion.add(requete);
+								}
+							}
+							
+							update_planning_point_de_vente(datDebutSemaint,ligne.getPoint_vente());
 				
 							insertionPaning = null;
 							insertionPlage = null;
@@ -586,9 +673,11 @@ public class ReedTheFolder {
 	 * @param type_contenu (N->normal sil es en Repos ou journéé et A s'il est absent)
 	 * @param heures_effectuees
 	 * @param date la date du jour
+	 * @version 20092017 ajout de l'order by sur la selection de planning salarie
 	 * 
 	 */
-	static void insert_planingJour(String id_contrat,String point_vent,String unite,String typeAbsence,String type_contenu,Integer heures_effectuees,String date){
+	static void insert_planingJour(String id_contrat,String point_vent,String unite,String typeAbsence,String type_contenu,Integer heures_effectuees,String dateDebutPlage,int numJour,String dateJour){
+		System.out.println("Génération des requêtes de planning JOUR.");
 		
 		insert_planingJour ="";
 		insert_planingJour +="insert into planning_jour (id_planning_salarie,date,id_planning_type_jour,contractuel,id_planning_plage,";
@@ -598,9 +687,10 @@ public class ReedTheFolder {
 		insert_planingJour +="where ps.id_planning_point_vente = ppv.id_planning_point_vente";
 		insert_planingJour +=" and ppv.id_point_vente = pv.id_point_vente ";
 		insert_planingJour +="and ps.id_salarie in (select id_salarie from contrat where numero_contrat like '"+ id_contrat;
-		insert_planingJour +="') and pv.numero_point_vente like '"+point_vent +"' and ppv.date_debut='"+ datDebutSemaint +"'),";
+		insert_planingJour +="') and pv.numero_point_vente like '"+point_vent +"' and ppv.date_debut='"+ datDebutSemaint; 
+		insert_planingJour+="' order by id_planning_salarie desc limit 1),";
 		//recuperation de la date du jour
-		insert_planingJour +="'"+date+"',";
+		insert_planingJour +="'"+dateJour+"',";
 		//recuperation de id_planning_type_jour
 		insert_planingJour +="(select ptj.id_planning_type_jour from planning_type_jour ptj,planning_type pt, contrat c ";
 		insert_planingJour +="where ptj.id_planning_type=pt.id_planning_type ";
@@ -616,11 +706,11 @@ public class ReedTheFolder {
 		insert_planingJour +="and ptj.numero_jour="+numJour +" ";
 		insert_planingJour +="and c.numero_contrat like '" +id_contrat +"' ";
 		insert_planingJour +="and pt.debut <='"+datDebutSemaint+"'";
-		insert_planingJour +=" and pt.fin is null),";
-		//recuperation de id_planning_plage
+		insert_planingJour +="),";
+		//recuperation de id_planning_plage avec la date du jour
 		insert_planingJour +="(select id_planning_plage from planning_plage pg, point_vente pv ";
 		insert_planingJour +="where pg.id_point_vente = pv.id_point_vente ";
-		insert_planingJour +="and pg.debut ='"+datDebutSemaint+"'";;
+		insert_planingJour +="and pg.debut ='"+dateDebutPlage+"'";;
 		insert_planingJour +=" and pv.numero_point_vente like '"+point_vent;
 		insert_planingJour +="' and pg.id_salarie in (select id_salarie from contrat where numero_contrat like '"+id_contrat +"')),";;
 		//recuperation de l'unite H ou J
@@ -628,7 +718,7 @@ public class ReedTheFolder {
 		//presence matin, soir et Normal N ou Abscence A
 		insert_planingJour +=typeAbsence+"," +typeAbsence+",'"+type_contenu+"',";
 		//recuperation de nombre d'heure travailler en minuite 
-		insert_planingJour +=heures_effectuees;
+		insert_planingJour +=heures_effectuees!=null ? heures_effectuees : 0;
 		insert_planingJour +=");";
 		insertionPaning.add(insert_planingJour);
 	}
@@ -643,7 +733,7 @@ public class ReedTheFolder {
 	 */
 	
 	static void insert_plageHoraire(String id_contrat,String point_vent,String dateDebut,String date,String typeAbsence,String heur){
-		
+		System.out.println("Génération de requête pour plage horaire.");
 		insert_plageHoraire="";
 		insert_plageHoraire+="insert into plage_horaire(id_planning_jour,debut_plage, fin_plage, id_motif) values ";
 		insert_plageHoraire+="((select id_planning_jour from planning_jour pj, planning_salarie ps,contrat c,point_vente pv,planning_point_vente ppv";
@@ -678,7 +768,8 @@ public class ReedTheFolder {
 	 */
 	
 	static void insert_planingPlage(int numSemaine,String nom, String dateDebut,String dateFin,String typeAbscence,String unite,String id_contrat,String point_vent){
-		insert_planingPlage = "<!-- Planing plage pour chaque jour de la semaine " +numSemaine +" pour l'employe "+ nom +" dont la date de debut est "+dateDebut+" et la date de fin est "+dateFin+" -->\n";
+		System.out.println("Génération de requête pour planning plage");
+		insert_planingPlage = "\n/* Planing plage pour chaque jour de la semaine " +numSemaine +" pour l'employe "+ nom +" dont la date de debut est "+dateDebut+" et la date de fin est "+dateFin+" */\n";
 		insert_planingPlage +="insert into planning_plage (debut,fin,id_motif,unite,duree_semaine_0,id_salarie,id_point_vente) values (";
 		insert_planingPlage +="'"+dateDebut+"',";
 		insert_planingPlage +="'"+dateFin+"',";
@@ -690,12 +781,76 @@ public class ReedTheFolder {
 		}else{
 			insert_planingPlage +=typeRetrouve+",";
 			insert_planingPlage +="'"+unite +"',";
-			insert_planingPlage +="select id_salarie from contrat where numero_contrat like '"+id_contrat +"',";
-			insert_planingPlage +="select id_point_vente from point_vente where numero_point_vente like '" +point_vent;
-			insert_planingPlage +="');";
+			insert_planingPlage +="0,";
+			insert_planingPlage +="(select id_salarie from contrat where numero_contrat like '"+id_contrat +"'),";
+			insert_planingPlage +="(select id_point_vente from point_vente where numero_point_vente like '" +point_vent;
+			insert_planingPlage +="'));";
 			insertion_planingPlage.add(insert_planingPlage);
 			verificationJour = true;
 		}
+	}
+	
+	/**
+	 * Permet de générer les requetes pour hev_hebdo
+	 * @author odiop
+	 * @param nom
+	 * @param numSemaine
+	 * @param numContrat
+	 * @param pointVente
+	 * @param date
+	 */
+	static void insert_ev_hebdo(String nom, int numSemaine,String numContrat, String pointVente, String date){
+		System.out.println("Génération de requête pour evenement hebdo.");
+		insert_ev_hebdo = "\n/* Création de l'évenement Hebdo de l'employe "+ nom +"pour la semaine du " + numSemaine +" */ \n";
+		insert_ev_hebdo += "insert into ev_hebdo(id_planning_salarie,id_element,code_element,valeur) values (";
+		insert_ev_hebdo += "(select id_planning_salarie from planning_salarie ps, contrat c,planning_point_vente ppv,point_vente pv where ps.id_salarie = c.id_salarie";
+		insert_ev_hebdo +=" and ps.id_planning_point_vente = ppv.id_planning_point_vente ";
+		insert_ev_hebdo +=" and ppv.id_point_vente = pv.id_point_vente ";
+		insert_ev_hebdo +=" and c.numero_contrat like '"+ numContrat;
+		insert_ev_hebdo +="' and pv.id_point_vente like '"+pointVente;
+		insert_ev_hebdo +="' and date_debut ='"+date;
+		insert_ev_hebdo +="')";
+		insert_ev_hebdo +=", '000', 'CODE','000');";
+		listeInsertion.add(insert_ev_hebdo);
+	}
+	
+	/**
+	 * Permet de générer les requetes pour ev_jour.
+	 * @author odiop
+	 * @param nom
+	 * @param pointvente
+	 * @param numContrat
+	 * @param date_debut
+	 * @param date
+	 */
+	static void insert_ev_jour(String nom,String pointvente,String numContrat,String date_debut,String date){
+		System.out.println("Génération de requete pour evenement jour.");
+		insert_evJour ="insert into ev_jour(id_planning_jour,id_element,code_element,valeur) values (";
+		insert_evJour +="(select id_planning_jour from planning_jour pj, planning_salarie ps,planning_point_vente ppv,point_vente pv ";
+		insert_evJour +="where pj.id_planning_salarie = ps.id_planning_salarie ";
+		insert_evJour +="and ps.id_planning_point_vente = ppv.id_planning_point_vente ";
+		insert_evJour +="and ppv.id_point_vente = pv.id_point_vente ";
+		insert_evJour +="and pv.numero_point_vente like '"+pointvente;
+		insert_evJour +="' and ps.id_salarie='"+numContrat;
+		insert_evJour +="' and date_debut ='"+date_debut;
+		insert_evJour +="' and date ='"+date;
+		insert_evJour +="'),'000','CODE','000');";
+		
+		insertion_evJour.add(insert_evJour);
+		
+	}
+	
+	/**
+	 * Permet de dévalider les semaines
+	 * @author odiop
+	 * @param date_debut_semaine
+	 * @param point_vente
+	 */
+	static void update_planning_point_de_vente(String date_debut_semaine,String point_vente){
+		insert_planning_point_vente ="\n/*création de la requête de modification de la table planning_point_vente pour la semaine "+date_debut_semaine+" */ \n";;
+		insert_planning_point_vente +="UPDATE planning_point_vente SET etat=0";
+		insert_planning_point_vente +=" where date_debut='"+date_debut_semaine+"' and id_point_vente in (select id_point_vente from point_vente where numero_point_vente like '"+point_vente+"');";
+		listeInsertion.add(insert_planning_point_vente);
 	}
 	
 	
@@ -726,20 +881,20 @@ public class ReedTheFolder {
             // Always close files.
             bufferedReader.close();   
             if(nameFile.endsWith("sql")){
-            	System.out.println("Fin de la creation des requetes dans le fichier "+fileName);
+            	information +="Fin de la creation des requetes dans le fichier "+fileName +"\n";
             }else{
-            	System.out.println("Le fichier des exceptions "+fileName);
+            	information +="Le fichier des exceptions "+fileName+"\n";
             }
         }
         catch(FileNotFoundException ex) {
-            System.out.println(
+           information +=
                 "Unable to open file '" + 
-                fileName + "'");                
+                fileName + "'\n";                
         }
         catch(IOException ex) {
-            System.out.println(
+           information +=
                 "Error reading file '" 
-                + fileName + "'");                  
+                + fileName + "'\n";                  
             // Or we could just do this: 
             // ex.printStackTrace();
         }
@@ -779,7 +934,6 @@ public class ReedTheFolder {
 						File fileTree = mapFile.get(numMangasin);
 						String[] tab1 = fileTree.getName().split("-");
 						String date1 = tab1[0];
-						System.out.println("date :"+date +"et date1 :"+date1);
 						if(dateFormat.parse(date.replaceAll("[-+.^:,~$]","")).after(dateFormat.parse(date1.replaceAll("[-+.^:,~$]","")))){
 							mapFile.put(numMangasin, child);
 						}
@@ -847,6 +1001,7 @@ public class ReedTheFolder {
 	}
 	
 	public static Collection<ContratSupprimer> readFileExcelContratSupprimer(String excelFile){
+		System.out.println("Lecture du fichier d'import.");
 		
 		Xcelite xcelite = new Xcelite(new File(excelFile));
 		XceliteSheet sheet = xcelite.getSheet("contrats");
@@ -858,6 +1013,8 @@ public class ReedTheFolder {
 	}
 	
 	public static void writeExcelContrat(List<ContratSupprimer> contratSupprimer){
+		System.out.println("Ecriture dans le fichier de rejet.");
+		
 		String fileName ="contratSupprimerRejeter.xlsx";
 		Xcelite xcelite = new Xcelite() ;    
 		XceliteSheet sheet = xcelite.createSheet("contrats");
@@ -867,8 +1024,63 @@ public class ReedTheFolder {
 		
 		xcelite.write(file);
 		
-		System.out.println("fin de la creation du fichier de rejet des contrat supprimer "+file.getAbsolutePath());
+		information +="fin de la creation du fichier de rejet des contrat supprimer "+file.getAbsolutePath() +"\n";
 
 	}
+	
+	
+	
+   public static String createFile(String fileName) throws IOException{
+	   
+	   System.out.println("Création du fichier sql");
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		Date date = new Date();
+		
+		String chemin = Paths.get("").toAbsolutePath().toString() + File.separator +"requete";
+		
+		String filePath = chemin + File.separator + fileName + dateFormat.format(date) +".sql";
+
+		Path path = Paths.get(convertToAbsolutePath(filePath));
+		
+    	
+    	Files.createDirectories(path.getParent());
+    	
+    	try {
+            Files.createFile(path);
+        } catch (FileAlreadyExistsException e) {
+            System.err.println("already exists: " + e.getMessage());
+        }
+    	
+    	File file = new File(filePath);
+    	
+    	file.getParentFile().mkdirs();
+    	
+    	file.createNewFile();
+    	
+    	return file.getAbsolutePath();
+	}	
+	
+	
+	public static String convertToAbsolutePath(String fileName) {
+
+	    boolean absolute = false;
+
+	    if (fileName.startsWith("/") || fileName.startsWith("\\") || fileName.startsWith("//") || fileName.startsWith("\\\\")) {
+	      absolute = true;
+	    } else if (fileName.length() > 1) {
+	      if (fileName.charAt(1) == ':') absolute = true;
+	    }
+
+	    File file = new File(fileName);
+
+	    String absolutePath = null;
+	    try {
+	      absolutePath = file.getCanonicalPath();
+	    } catch (IOException e) {
+	    }
+
+	    return absolutePath;
+	  }
 	
 }

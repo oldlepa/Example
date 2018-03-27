@@ -12,8 +12,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class TestWriteFile {
 
@@ -94,76 +100,138 @@ public class TestWriteFile {
 	public static void main(String [] args) {
 
         
-		String fileName = null;
+//		String fileName = null;
+//		
+//        // This will reference one line at a time
+//        String line = null;
+//        String timeLog = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
+//
+//        String lines = "",liness = "";
+//
+//        try {
+//        	
+//        	File logFile = new File("logFile");
+//    	    if (!logFile.exists()) {
+//    	  	  logFile.createNewFile();
+//    		}
+//
+//    	   fileName = logFile.getAbsolutePath();
+//        	
+//        	
+//            // FileReader reads text files in the default encoding.
+//            FileReader fileReader = new FileReader(fileName);
+//
+//            // Always wrap FileReader in BufferedReader.
+//            BufferedReader bufferedReader = new BufferedReader(fileReader);
+//
+//            while((line = bufferedReader.readLine()) != null) {
+//                System.out.println(line);
+//                lines += line + "\n";
+//            }  
+//            
+//            liness +="je suis une chaine \n";
+//            
+//            String lineDate = "Modification des logs du [" + timeLog +"] : \n";
+//            
+//            // Assume default encoding.
+//            FileWriter fileWriter = new FileWriter(fileName);
+//
+//            // Always wrap FileWriter in BufferedWriter.
+//            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//
+//            // Note that write() does not automatically
+////            bufferedWriter.newLine();
+//            // append a newline character.
+//            
+//            bufferedWriter.write(lines);
+//            
+//            bufferedWriter.write(lineDate);
+//            
+//            bufferedWriter.write("\t -"+liness);
+//           
+//
+//            // Always close files.
+//            bufferedWriter.close();
+//            // Always close files.
+//            bufferedReader.close();         
+//        }
+//        catch(FileNotFoundException ex) {
+//            System.out.println(
+//                "Unable to open file '" + 
+//                fileName + "'");                
+//        }
+//        catch(IOException ex) {
+//            System.out.println(
+//                "Error reading file '" 
+//                + fileName + "'");                  
+//            // Or we could just do this: 
+//            // ex.printStackTrace();
+//        }
 		
-        // This will reference one line at a time
-        String line = null;
-        String timeLog = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
-
-        String lines = "",liness = "";
-
-        try {
-        	
-        	File logFile = new File("logFile");
-    	    if (!logFile.exists()) {
-    	  	  logFile.createNewFile();
-    		}
-
-    	   fileName = logFile.getAbsolutePath();
-        	
-        	
-            // FileReader reads text files in the default encoding.
-            FileReader fileReader = new FileReader(fileName);
-
-            // Always wrap FileReader in BufferedReader.
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            while((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-                lines += line + "\n";
-            }  
-            
-            liness +="je suis une chaine \n";
-            
-            String lineDate = "Modification des logs du [" + timeLog +"] : \n";
-            
-            // Assume default encoding.
-            FileWriter fileWriter = new FileWriter(fileName);
-
-            // Always wrap FileWriter in BufferedWriter.
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
-            // Note that write() does not automatically
-//            bufferedWriter.newLine();
-            // append a newline character.
-            
-            bufferedWriter.write(lines);
-            
-            bufferedWriter.write(lineDate);
-            
-            bufferedWriter.write("\t -"+liness);
-           
-
-            // Always close files.
-            bufferedWriter.close();
-            // Always close files.
-            bufferedReader.close();         
-        }
-        catch(FileNotFoundException ex) {
-            System.out.println(
-                "Unable to open file '" + 
-                fileName + "'");                
-        }
-        catch(IOException ex) {
-            System.out.println(
-                "Error reading file '" 
-                + fileName + "'");                  
-            // Or we could just do this: 
-            // ex.printStackTrace();
-        }
+		
+		
+		try {
+			String chemin = createFile("test");
+			System.out.println(chemin);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
     }
     	
+	public static String createFile(String fileName) throws IOException{
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		Date date = new Date();
+		
+		String chemin = Paths.get("").toAbsolutePath().toString() + File.separator +"requete";
+		
+		String filePath = chemin + File.separator + fileName + dateFormat.format(date);
+
+		Path path = Paths.get(convertToAbsolutePath(filePath));
+		
     	
+    	Files.createDirectories(path.getParent());
+    	
+    	try {
+            Files.createFile(path);
+        } catch (FileAlreadyExistsException e) {
+            System.err.println("already exists: " + e.getMessage());
+        }
+    	
+    	File file = new File(filePath);
+    	
+    	file.getParentFile().mkdirs();
+    	
+    	file.createNewFile();
+    	
+    	return file.getAbsolutePath();
+	}	
+	
+	
+	public static String convertToAbsolutePath(String fileName) {
+
+	    boolean absolute = false;
+
+	    if (fileName.startsWith("/") || fileName.startsWith("\\") || fileName.startsWith("//") || fileName.startsWith("\\\\")) {
+	      absolute = true;
+	    } else if (fileName.length() > 1) {
+	      if (fileName.charAt(1) == ':') absolute = true;
+	    }
+
+	    File file = new File(fileName);
+
+	    String absolutePath = null;
+	    try {
+	      absolutePath = file.getCanonicalPath();
+	    } catch (IOException e) {
+	    }
+
+	    return absolutePath;
+	  }
     	
     	
     

@@ -1,0 +1,2322 @@
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS041062ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS041062ccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS040114ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS040967ccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040967ccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS040223cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040223cccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS040223cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040223cccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS040223cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040223cccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS040223cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040223cccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS040223cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040223cccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS040223cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040223cccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS040223cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040223cccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS080562cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS080562cccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS080562cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS080562cccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS080562cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS080562cccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS080562cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS080562cccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS080562cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS080562cccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS080562cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS080562cccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS080562cccc
+=========================================================================================== 
+
+le planning jour du point de vente MS080562cccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS040114ccccc
+=========================================================================================== 
+
+le planning jour du point de vente MS040114ccccc pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420075
+=========================================================================================== 
+
+le planning jour du point de vente MS420075 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420075
+=========================================================================================== 
+
+L'utilisateur ANNICK PONCET n'a pas de planning dans le magasin MS420075 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420075
+=========================================================================================== 
+
+L'utilisateur ANNICK PONCET n'a pas de planning dans le magasin MS420075 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420075
+=========================================================================================== 
+
+L'utilisateur ANNICK PONCET n'a pas de planning dans le magasin MS420075 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420075
+=========================================================================================== 
+
+L'utilisateur ANNICK PONCET n'a pas de planning dans le magasin MS420075 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420075
+=========================================================================================== 
+
+L'utilisateur ANNICK PONCET n'a pas de planning dans le magasin MS420075 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420720
+=========================================================================================== 
+
+le planning jour du point de vente MS420720 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420720
+=========================================================================================== 
+
+L'utilisateur SOPHIE HUBER n'a pas de planning dans le magasin MS420720 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420720
+=========================================================================================== 
+
+L'utilisateur SOPHIE HUBER n'a pas de planning dans le magasin MS420720 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420720
+=========================================================================================== 
+
+L'utilisateur SOPHIE HUBER n'a pas de planning dans le magasin MS420720 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420720
+=========================================================================================== 
+
+L'utilisateur SOPHIE HUBER n'a pas de planning dans le magasin MS420720 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420768
+=========================================================================================== 
+
+le planning jour du point de vente MS420768 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420768
+=========================================================================================== 
+
+L'utilisateur JOSIANE COUET n'a pas de planning dans le magasin MS420768 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420768
+=========================================================================================== 
+
+L'utilisateur JOSIANE COUET n'a pas de planning dans le magasin MS420768 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420752
+=========================================================================================== 
+
+le planning jour du point de vente MS420752 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420752
+=========================================================================================== 
+
+L'utilisateur CHLOE MAUGIN n'a pas de planning dans le magasin MS420752 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420752
+=========================================================================================== 
+
+L'utilisateur CHLOE MAUGIN n'a pas de planning dans le magasin MS420752 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420752
+=========================================================================================== 
+
+L'utilisateur CHLOE MAUGIN n'a pas de planning dans le magasin MS420752 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420752
+=========================================================================================== 
+
+L'utilisateur CHLOE MAUGIN n'a pas de planning dans le magasin MS420752 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS410030
+=========================================================================================== 
+
+le planning jour du point de vente MS410030 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS410030
+=========================================================================================== 
+
+le planning jour du point de vente MS410030 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS410030
+=========================================================================================== 
+
+le planning jour du point de vente MS410030 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS410030
+=========================================================================================== 
+
+le planning jour du point de vente MS410030 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS410030
+=========================================================================================== 
+
+le planning jour du point de vente MS410030 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS410030
+=========================================================================================== 
+
+le planning jour du point de vente MS410030 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS410030
+=========================================================================================== 
+
+le planning jour du point de vente MS410030 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420728
+=========================================================================================== 
+
+le planning jour du point de vente MS420728 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420728
+=========================================================================================== 
+
+L'utilisateur ELISABETH VIGREUX n'a pas de planning dans le magasin MS420728 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420728
+=========================================================================================== 
+
+L'utilisateur ELISABETH VIGREUX n'a pas de planning dans le magasin MS420728 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420728
+=========================================================================================== 
+
+L'utilisateur ELISABETH VIGREUX n'a pas de planning dans le magasin MS420728 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420728
+=========================================================================================== 
+
+L'utilisateur ELISABETH VIGREUX n'a pas de planning dans le magasin MS420728 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420760
+=========================================================================================== 
+
+le planning jour du point de vente MS420760 pour la semaine du 12 n'existe pas
+Le type d'abscence abs_autorisée_non_payée ne peut pas etre traiter pour l'employe LOLA VELASCOde la semaine du 15 et de la date du 2017-04-10
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420760
+=========================================================================================== 
+
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS410733
+=========================================================================================== 
+
+le planning jour du point de vente MS410733 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS410733
+=========================================================================================== 
+
+le planning jour du point de vente MS410733 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS410733
+=========================================================================================== 
+
+le planning jour du point de vente MS410733 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS410733
+=========================================================================================== 
+
+le planning jour du point de vente MS410733 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS410733
+=========================================================================================== 
+
+le planning jour du point de vente MS410733 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS410733
+=========================================================================================== 
+
+le planning jour du point de vente MS410733 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS410733
+=========================================================================================== 
+
+le planning jour du point de vente MS410733 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420718
+=========================================================================================== 
+
+le planning jour du point de vente MS420718 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500443
+=========================================================================================== 
+
+le planning jour du point de vente MR500443 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500443
+=========================================================================================== 
+
+le planning jour du point de vente MR500443 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500443
+=========================================================================================== 
+
+le planning jour du point de vente MR500443 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500443
+=========================================================================================== 
+
+le planning jour du point de vente MR500443 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500443
+=========================================================================================== 
+
+le planning jour du point de vente MR500443 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500443
+=========================================================================================== 
+
+le planning jour du point de vente MR500443 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500443
+=========================================================================================== 
+
+le planning jour du point de vente MR500443 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420779
+=========================================================================================== 
+
+le planning jour du point de vente MS420779 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420779
+=========================================================================================== 
+
+L'utilisateur ELISE GOZETLIK n'a pas de planning dans le magasin MS420779 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420779
+=========================================================================================== 
+
+L'utilisateur ELISE GOZETLIK n'a pas de planning dans le magasin MS420779 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420779
+=========================================================================================== 
+
+L'utilisateur ELISE GOZETLIK n'a pas de planning dans le magasin MS420779 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420740
+=========================================================================================== 
+
+le planning jour du point de vente MS420740 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420740
+=========================================================================================== 
+
+L'utilisateur MARIANNE PLANCHE n'a pas de planning dans le magasin MS420740 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420740
+=========================================================================================== 
+
+L'utilisateur MARIANNE PLANCHE n'a pas de planning dans le magasin MS420740 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420740
+=========================================================================================== 
+
+L'utilisateur MARIANNE PLANCHE n'a pas de planning dans le magasin MS420740 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420740
+=========================================================================================== 
+
+L'utilisateur MARIANNE PLANCHE n'a pas de planning dans le magasin MS420740 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420740
+=========================================================================================== 
+
+L'utilisateur MARIANNE PLANCHE n'a pas de planning dans le magasin MS420740 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS410147
+=========================================================================================== 
+
+le planning jour du point de vente MS410147 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420139
+=========================================================================================== 
+
+le planning jour du point de vente MS420139 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420139
+=========================================================================================== 
+
+L'utilisateur ASSIA MIFTAH n'a pas de planning dans le magasin MS420139 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420139
+=========================================================================================== 
+
+L'utilisateur ASSIA MIFTAH n'a pas de planning dans le magasin MS420139 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420139
+=========================================================================================== 
+
+L'utilisateur ASSIA MIFTAH n'a pas de planning dans le magasin MS420139 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420139
+=========================================================================================== 
+
+L'utilisateur ASSIA MIFTAH n'a pas de planning dans le magasin MS420139 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420139
+=========================================================================================== 
+
+L'utilisateur ASSIA MIFTAH n'a pas de planning dans le magasin MS420139 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420764
+=========================================================================================== 
+
+le planning jour du point de vente MS420764 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420764
+=========================================================================================== 
+
+L'utilisateur CHARLOTTE CONZATTI n'a pas de planning dans le magasin MS420764 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420769
+=========================================================================================== 
+
+le planning jour du point de vente MS420769 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420769
+=========================================================================================== 
+
+L'utilisateur CLARA BUJOK n'a pas de planning dans le magasin MS420769 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420761
+=========================================================================================== 
+
+le planning jour du point de vente MS420761 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420761
+=========================================================================================== 
+
+L'utilisateur CLAUDINE PITON n'a pas de planning dans le magasin MS420761 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420761
+=========================================================================================== 
+
+L'utilisateur CLAUDINE PITON n'a pas de planning dans le magasin MS420761 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420742
+=========================================================================================== 
+
+le planning jour du point de vente MS420742 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420742
+=========================================================================================== 
+
+L'utilisateur EDWINA FESTOC n'a pas de planning dans le magasin MS420742 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420742
+=========================================================================================== 
+
+L'utilisateur EDWINA FESTOC n'a pas de planning dans le magasin MS420742 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420742
+=========================================================================================== 
+
+L'utilisateur EDWINA FESTOC n'a pas de planning dans le magasin MS420742 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420742
+=========================================================================================== 
+
+L'utilisateur EDWINA FESTOC n'a pas de planning dans le magasin MS420742 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420729
+=========================================================================================== 
+
+le planning jour du point de vente MS420729 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420729
+=========================================================================================== 
+
+le planning jour du point de vente MS420729 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420729
+=========================================================================================== 
+
+le planning jour du point de vente MS420729 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500825
+=========================================================================================== 
+
+le planning jour du point de vente MR500825 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500825
+=========================================================================================== 
+
+le planning jour du point de vente MR500825 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500825
+=========================================================================================== 
+
+le planning jour du point de vente MR500825 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500825
+=========================================================================================== 
+
+le planning jour du point de vente MR500825 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500825
+=========================================================================================== 
+
+le planning jour du point de vente MR500825 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500825
+=========================================================================================== 
+
+le planning jour du point de vente MR500825 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500825
+=========================================================================================== 
+
+le planning jour du point de vente MR500825 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500822
+=========================================================================================== 
+
+le planning jour du point de vente MR500822 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500822
+=========================================================================================== 
+
+le planning jour du point de vente MR500822 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500822
+=========================================================================================== 
+
+le planning jour du point de vente MR500822 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500822
+=========================================================================================== 
+
+le planning jour du point de vente MR500822 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500822
+=========================================================================================== 
+
+le planning jour du point de vente MR500822 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500822
+=========================================================================================== 
+
+le planning jour du point de vente MR500822 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500822
+=========================================================================================== 
+
+le planning jour du point de vente MR500822 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS410772
+=========================================================================================== 
+
+le planning jour du point de vente MS410772 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS410772
+=========================================================================================== 
+
+le planning jour du point de vente MS410772 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS410772
+=========================================================================================== 
+
+le planning jour du point de vente MS410772 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS410772
+=========================================================================================== 
+
+le planning jour du point de vente MS410772 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS410772
+=========================================================================================== 
+
+le planning jour du point de vente MS410772 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS410772
+=========================================================================================== 
+
+le planning jour du point de vente MS410772 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS410772
+=========================================================================================== 
+
+le planning jour du point de vente MS410772 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+le planning jour du point de vente MS420749 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur MARIE VIARD n'a pas de planning dans le magasin MS420749 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur MARIE VIARD n'a pas de planning dans le magasin MS420749 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur MARIE VIARD n'a pas de planning dans le magasin MS420749 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur MARIE VIARD n'a pas de planning dans le magasin MS420749 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur MARIE VIARD n'a pas de planning dans le magasin MS420749 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur MARIE VIARD n'a pas de planning dans le magasin MS420749 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420732
+=========================================================================================== 
+
+le planning jour du point de vente MS420732 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500450
+=========================================================================================== 
+
+le planning jour du point de vente MR500450 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500450
+=========================================================================================== 
+
+le planning jour du point de vente MR500450 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500450
+=========================================================================================== 
+
+le planning jour du point de vente MR500450 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500450
+=========================================================================================== 
+
+le planning jour du point de vente MR500450 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500450
+=========================================================================================== 
+
+le planning jour du point de vente MR500450 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500450
+=========================================================================================== 
+
+le planning jour du point de vente MR500450 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500450
+=========================================================================================== 
+
+le planning jour du point de vente MR500450 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420797
+=========================================================================================== 
+
+le planning jour du point de vente MS420797 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420797
+=========================================================================================== 
+
+L'utilisateur SAMIA ZARROUKI n'a pas de planning dans le magasin MS420797 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420797
+=========================================================================================== 
+
+L'utilisateur SAMIA ZARROUKI n'a pas de planning dans le magasin MS420797 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420797
+=========================================================================================== 
+
+L'utilisateur SAMIA ZARROUKI n'a pas de planning dans le magasin MS420797 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420797
+=========================================================================================== 
+
+L'utilisateur SAMIA ZARROUKI n'a pas de planning dans le magasin MS420797 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420738
+=========================================================================================== 
+
+le planning jour du point de vente MS420738 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420738
+=========================================================================================== 
+
+L'utilisateur EVA PAULIN n'a pas de planning dans le magasin MS420738 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420702
+=========================================================================================== 
+
+le planning jour du point de vente MS420702 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420702
+=========================================================================================== 
+
+L'utilisateur MEGANE DAVID n'a pas de planning dans le magasin MS420702 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420702
+=========================================================================================== 
+
+L'utilisateur MEGANE DAVID n'a pas de planning dans le magasin MS420702 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420702
+=========================================================================================== 
+
+L'utilisateur MEGANE DAVID n'a pas de planning dans le magasin MS420702 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420702
+=========================================================================================== 
+
+L'utilisateur MEGANE DAVID n'a pas de planning dans le magasin MS420702 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420702
+=========================================================================================== 
+
+L'utilisateur MEGANE DAVID n'a pas de planning dans le magasin MS420702 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420702
+=========================================================================================== 
+
+L'utilisateur MEGANE DAVID n'a pas de planning dans le magasin MS420702 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420129
+=========================================================================================== 
+
+le planning jour du point de vente MS420129 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420129
+=========================================================================================== 
+
+L'utilisateur FERNANDE JOSSELIN n'a pas de planning dans le magasin MS420129 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500422
+=========================================================================================== 
+
+le planning jour du point de vente MR500422 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500422
+=========================================================================================== 
+
+le planning jour du point de vente MR500422 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500422
+=========================================================================================== 
+
+le planning jour du point de vente MR500422 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500422
+=========================================================================================== 
+
+le planning jour du point de vente MR500422 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500422
+=========================================================================================== 
+
+le planning jour du point de vente MR500422 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500422
+=========================================================================================== 
+
+le planning jour du point de vente MR500422 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500422
+=========================================================================================== 
+
+le planning jour du point de vente MR500422 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420721
+=========================================================================================== 
+
+le planning jour du point de vente MS420721 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420048
+=========================================================================================== 
+
+le planning jour du point de vente MS420048 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420048
+=========================================================================================== 
+
+L'utilisateur SANDY JEANSON n'a pas de planning dans le magasin MS420048 pour la période 16
+Le type d'abscence 11h00_16h00_abs_autorisée_non_payée ne peut pas etre traiter pour l'employe SANDY JEANSONde la semaine du 17 et de la date du 2017-04-24
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420048
+=========================================================================================== 
+
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420048
+=========================================================================================== 
+
+L'utilisateur SANDY JEANSON n'a pas de planning dans le magasin MS420048 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420795
+=========================================================================================== 
+
+le planning jour du point de vente MS420795 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420795
+=========================================================================================== 
+
+L'utilisateur JUSTINE HELLOIN n'a pas de planning dans le magasin MS420795 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420741
+=========================================================================================== 
+
+le planning jour du point de vente MS420741 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420741
+=========================================================================================== 
+
+L'utilisateur JULIE BUFFARD n'a pas de planning dans le magasin MS420741 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420741
+=========================================================================================== 
+
+L'utilisateur JULIE BUFFARD n'a pas de planning dans le magasin MS420741 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420751
+=========================================================================================== 
+
+le planning jour du point de vente MS420751 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420751
+=========================================================================================== 
+
+L'utilisateur INGRID LEVEQUE n'a pas de planning dans le magasin MS420751 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420790
+=========================================================================================== 
+
+le planning jour du point de vente MS420790 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420028
+=========================================================================================== 
+
+le planning jour du point de vente MS420028 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420028
+=========================================================================================== 
+
+L'utilisateur NEJMA DEROUICHE n'a pas de planning dans le magasin MS420028 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420028
+=========================================================================================== 
+
+L'utilisateur NEJMA DEROUICHE n'a pas de planning dans le magasin MS420028 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420028
+=========================================================================================== 
+
+L'utilisateur NEJMA DEROUICHE n'a pas de planning dans le magasin MS420028 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420028
+=========================================================================================== 
+
+L'utilisateur NEJMA DEROUICHE n'a pas de planning dans le magasin MS420028 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420703
+=========================================================================================== 
+
+le planning jour du point de vente MS420703 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420133
+=========================================================================================== 
+
+le planning jour du point de vente MS420133 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420049
+=========================================================================================== 
+
+le planning jour du point de vente MS420049 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420049
+=========================================================================================== 
+
+L'utilisateur AGATHE MAYERY n'a pas de planning dans le magasin MS420049 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420049
+=========================================================================================== 
+
+L'utilisateur AGATHE MAYERY n'a pas de planning dans le magasin MS420049 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420049
+=========================================================================================== 
+
+L'utilisateur AGATHE MAYERY n'a pas de planning dans le magasin MS420049 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420785
+=========================================================================================== 
+
+le planning jour du point de vente MS420785 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+le planning jour du point de vente MS420749 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur ERWAN ELIMAN n'a pas de planning dans le magasin MS420749 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur ERWAN ELIMAN n'a pas de planning dans le magasin MS420749 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur ERWAN ELIMAN n'a pas de planning dans le magasin MS420749 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur ERWAN ELIMAN n'a pas de planning dans le magasin MS420749 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+L'utilisateur ERWAN ELIMAN n'a pas de planning dans le magasin MS420749 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500448
+=========================================================================================== 
+
+le planning jour du point de vente MR500448 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500448
+=========================================================================================== 
+
+le planning jour du point de vente MR500448 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500448
+=========================================================================================== 
+
+le planning jour du point de vente MR500448 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500448
+=========================================================================================== 
+
+le planning jour du point de vente MR500448 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500448
+=========================================================================================== 
+
+le planning jour du point de vente MR500448 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500448
+=========================================================================================== 
+
+le planning jour du point de vente MR500448 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500448
+=========================================================================================== 
+
+le planning jour du point de vente MR500448 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420744
+=========================================================================================== 
+
+le planning jour du point de vente MS420744 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420744
+=========================================================================================== 
+
+L'utilisateur JULIE MARTINEZ n'a pas de planning dans le magasin MS420744 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420795
+=========================================================================================== 
+
+le planning jour du point de vente MS420795 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420795
+=========================================================================================== 
+
+L'utilisateur NOLWENN LE MOEL n'a pas de planning dans le magasin MS420795 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420795
+=========================================================================================== 
+
+L'utilisateur NOLWENN LE MOEL n'a pas de planning dans le magasin MS420795 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420795
+=========================================================================================== 
+
+L'utilisateur NOLWENN LE MOEL n'a pas de planning dans le magasin MS420795 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420127
+=========================================================================================== 
+
+le planning jour du point de vente MS420127 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420127
+=========================================================================================== 
+
+L'utilisateur ANETA DEMIROVIK n'a pas de planning dans le magasin MS420127 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420127
+=========================================================================================== 
+
+L'utilisateur ANETA DEMIROVIK n'a pas de planning dans le magasin MS420127 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420127
+=========================================================================================== 
+
+L'utilisateur ANETA DEMIROVIK n'a pas de planning dans le magasin MS420127 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420127
+=========================================================================================== 
+
+L'utilisateur ANETA DEMIROVIK n'a pas de planning dans le magasin MS420127 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420127
+=========================================================================================== 
+
+L'utilisateur ANETA DEMIROVIK n'a pas de planning dans le magasin MS420127 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420127
+=========================================================================================== 
+
+L'utilisateur ANETA DEMIROVIK n'a pas de planning dans le magasin MS420127 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420015
+=========================================================================================== 
+
+le planning jour du point de vente MS420015 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420022
+=========================================================================================== 
+
+le planning jour du point de vente MS420022 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420022
+=========================================================================================== 
+
+L'utilisateur CHRISTINE LEINER n'a pas de planning dans le magasin MS420022 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420132
+=========================================================================================== 
+
+le planning jour du point de vente MS420132 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+le planning jour du point de vente MS420739 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur CHARLENE SILVA GONCALVES n'a pas de planning dans le magasin MS420739 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur CHARLENE SILVA GONCALVES n'a pas de planning dans le magasin MS420739 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur CHARLENE SILVA GONCALVES n'a pas de planning dans le magasin MS420739 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur CHARLENE SILVA GONCALVES n'a pas de planning dans le magasin MS420739 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur CHARLENE SILVA GONCALVES n'a pas de planning dans le magasin MS420739 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur CHARLENE SILVA GONCALVES n'a pas de planning dans le magasin MS420739 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420722
+=========================================================================================== 
+
+le planning jour du point de vente MS420722 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420722
+=========================================================================================== 
+
+L'utilisateur SAMIRA KOUAR n'a pas de planning dans le magasin MS420722 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420724
+=========================================================================================== 
+
+le planning jour du point de vente MS420724 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420724
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA GIRARD n'a pas de planning dans le magasin MS420724 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420724
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA GIRARD n'a pas de planning dans le magasin MS420724 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420724
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA GIRARD n'a pas de planning dans le magasin MS420724 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420779
+=========================================================================================== 
+
+le planning jour du point de vente MS420779 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420735
+=========================================================================================== 
+
+le planning jour du point de vente MS420735 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+le planning jour du point de vente MS420122 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA SAINT FLEUR n'a pas de planning dans le magasin MS420122 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA SAINT FLEUR n'a pas de planning dans le magasin MS420122 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA SAINT FLEUR n'a pas de planning dans le magasin MS420122 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA SAINT FLEUR n'a pas de planning dans le magasin MS420122 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA SAINT FLEUR n'a pas de planning dans le magasin MS420122 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+L'utilisateur ALEXANDRA SAINT FLEUR n'a pas de planning dans le magasin MS420122 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420709
+=========================================================================================== 
+
+le planning jour du point de vente MS420709 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420793
+=========================================================================================== 
+
+le planning jour du point de vente MS420793 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420793
+=========================================================================================== 
+
+L'utilisateur ROSSELLA CUTELLE n'a pas de planning dans le magasin MS420793 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420793
+=========================================================================================== 
+
+L'utilisateur ROSSELLA CUTELLE n'a pas de planning dans le magasin MS420793 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420091
+=========================================================================================== 
+
+le planning jour du point de vente MS420091 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500427
+=========================================================================================== 
+
+le planning jour du point de vente MR500427 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500427
+=========================================================================================== 
+
+le planning jour du point de vente MR500427 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500427
+=========================================================================================== 
+
+le planning jour du point de vente MR500427 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500427
+=========================================================================================== 
+
+le planning jour du point de vente MR500427 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500427
+=========================================================================================== 
+
+le planning jour du point de vente MR500427 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500427
+=========================================================================================== 
+
+le planning jour du point de vente MR500427 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500427
+=========================================================================================== 
+
+le planning jour du point de vente MR500427 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420757
+=========================================================================================== 
+
+le planning jour du point de vente MS420757 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500414
+=========================================================================================== 
+
+le planning jour du point de vente MR500414 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500414
+=========================================================================================== 
+
+le planning jour du point de vente MR500414 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500414
+=========================================================================================== 
+
+le planning jour du point de vente MR500414 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500414
+=========================================================================================== 
+
+le planning jour du point de vente MR500414 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500414
+=========================================================================================== 
+
+le planning jour du point de vente MR500414 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500414
+=========================================================================================== 
+
+le planning jour du point de vente MR500414 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500414
+=========================================================================================== 
+
+le planning jour du point de vente MR500414 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420713
+=========================================================================================== 
+
+le planning jour du point de vente MS420713 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+le planning jour du point de vente MS420739 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur EMMANUELLE MAURO n'a pas de planning dans le magasin MS420739 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420739
+=========================================================================================== 
+
+L'utilisateur EMMANUELLE MAURO n'a pas de planning dans le magasin MS420739 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420731
+=========================================================================================== 
+
+le planning jour du point de vente MS420731 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420746
+=========================================================================================== 
+
+le planning jour du point de vente MS420746 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420746
+=========================================================================================== 
+
+L'utilisateur EMILIE NARDI n'a pas de planning dans le magasin MS420746 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420746
+=========================================================================================== 
+
+L'utilisateur EMILIE NARDI n'a pas de planning dans le magasin MS420746 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420746
+=========================================================================================== 
+
+L'utilisateur EMILIE NARDI n'a pas de planning dans le magasin MS420746 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420713
+=========================================================================================== 
+
+le planning jour du point de vente MS420713 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420135
+=========================================================================================== 
+
+le planning jour du point de vente MS420135 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420135
+=========================================================================================== 
+
+L'utilisateur SALOUA GACEMI n'a pas de planning dans le magasin MS420135 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420135
+=========================================================================================== 
+
+L'utilisateur SALOUA GACEMI n'a pas de planning dans le magasin MS420135 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420753
+=========================================================================================== 
+
+le planning jour du point de vente MS420753 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420138
+=========================================================================================== 
+
+le planning jour du point de vente MS420138 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420782
+=========================================================================================== 
+
+le planning jour du point de vente MS420782 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420782
+=========================================================================================== 
+
+L'utilisateur MARION AUBINAIS n'a pas de planning dans le magasin MS420782 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420782
+=========================================================================================== 
+
+L'utilisateur MARION AUBINAIS n'a pas de planning dans le magasin MS420782 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+le planning jour du point de vente MS420726 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+L'utilisateur KATY BENOITS n'a pas de planning dans le magasin MS420726 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+L'utilisateur KATY BENOITS n'a pas de planning dans le magasin MS420726 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+L'utilisateur KATY BENOITS n'a pas de planning dans le magasin MS420726 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420792
+=========================================================================================== 
+
+le planning jour du point de vente MS420792 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420792
+=========================================================================================== 
+
+L'utilisateur OLINA MAKAMPA n'a pas de planning dans le magasin MS420792 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500435
+=========================================================================================== 
+
+le planning jour du point de vente MR500435 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500435
+=========================================================================================== 
+
+le planning jour du point de vente MR500435 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500435
+=========================================================================================== 
+
+le planning jour du point de vente MR500435 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500435
+=========================================================================================== 
+
+le planning jour du point de vente MR500435 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500435
+=========================================================================================== 
+
+le planning jour du point de vente MR500435 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500435
+=========================================================================================== 
+
+le planning jour du point de vente MR500435 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500435
+=========================================================================================== 
+
+le planning jour du point de vente MR500435 pour la semaine du 18 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420710
+=========================================================================================== 
+
+le planning jour du point de vente MS420710 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420710
+=========================================================================================== 
+
+L'utilisateur PATRICIA COLOMBANI n'a pas de planning dans le magasin MS420710 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420799
+=========================================================================================== 
+
+le planning jour du point de vente MS420799 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420799
+=========================================================================================== 
+
+L'utilisateur ELEONORE SAINT MARC n'a pas de planning dans le magasin MS420799 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420799
+=========================================================================================== 
+
+L'utilisateur ELEONORE SAINT MARC n'a pas de planning dans le magasin MS420799 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420799
+=========================================================================================== 
+
+L'utilisateur ELEONORE SAINT MARC n'a pas de planning dans le magasin MS420799 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420799
+=========================================================================================== 
+
+L'utilisateur ELEONORE SAINT MARC n'a pas de planning dans le magasin MS420799 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420799
+=========================================================================================== 
+
+L'utilisateur ELEONORE SAINT MARC n'a pas de planning dans le magasin MS420799 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420799
+=========================================================================================== 
+
+L'utilisateur ELEONORE SAINT MARC n'a pas de planning dans le magasin MS420799 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420753
+=========================================================================================== 
+
+le planning jour du point de vente MS420753 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MS420753
+=========================================================================================== 
+
+L'utilisateur MELANIE LEGER n'a pas de planning dans le magasin MS420753 pour la période 16
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MS420753
+=========================================================================================== 
+
+L'utilisateur MELANIE LEGER n'a pas de planning dans le magasin MS420753 pour la période 17
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420759
+=========================================================================================== 
+
+le planning jour du point de vente MS420759 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420759
+=========================================================================================== 
+
+L'utilisateur CYNTHIA THOMAS n'a pas de planning dans le magasin MS420759 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420759
+=========================================================================================== 
+
+L'utilisateur CYNTHIA THOMAS n'a pas de planning dans le magasin MS420759 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420759
+=========================================================================================== 
+
+L'utilisateur CYNTHIA THOMAS n'a pas de planning dans le magasin MS420759 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+le planning jour du point de vente MS420122 pour la semaine du 12 n'existe pas
+Le type d'abscence abs_autorisée_non_payée ne peut pas etre traiter pour l'employe DOMINIQUE LOPEZde la semaine du 13 et de la date du 2017-04-01
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420122
+=========================================================================================== 
+
+L'utilisateur DOMINIQUE LOPEZ n'a pas de planning dans le magasin MS420122 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420136
+=========================================================================================== 
+
+le planning jour du point de vente MS420136 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420136
+=========================================================================================== 
+
+L'utilisateur OLIVIA CLETON n'a pas de planning dans le magasin MS420136 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420136
+=========================================================================================== 
+
+L'utilisateur OLIVIA CLETON n'a pas de planning dans le magasin MS420136 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MS420136
+=========================================================================================== 
+
+L'utilisateur OLIVIA CLETON n'a pas de planning dans le magasin MS420136 pour la période 15
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420136
+=========================================================================================== 
+
+L'utilisateur OLIVIA CLETON n'a pas de planning dans le magasin MS420136 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420727
+=========================================================================================== 
+
+le planning jour du point de vente MS420727 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420749
+=========================================================================================== 
+
+le planning jour du point de vente MS420749 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+le planning jour du point de vente MS420726 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+L'utilisateur KATY BENOITS n'a pas de planning dans le magasin MS420726 pour la période 13
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+L'utilisateur KATY BENOITS n'a pas de planning dans le magasin MS420726 pour la période 14
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MS420726
+=========================================================================================== 
+
+L'utilisateur KATY BENOITS n'a pas de planning dans le magasin MS420726 pour la période 18
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 12 POUR LE MAGASIN MR500806
+=========================================================================================== 
+
+le planning jour du point de vente MR500806 pour la semaine du 12 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 13 POUR LE MAGASIN MR500806
+=========================================================================================== 
+
+le planning jour du point de vente MR500806 pour la semaine du 13 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 14 POUR LE MAGASIN MR500806
+=========================================================================================== 
+
+le planning jour du point de vente MR500806 pour la semaine du 14 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 15 POUR LE MAGASIN MR500806
+=========================================================================================== 
+
+le planning jour du point de vente MR500806 pour la semaine du 15 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 16 POUR LE MAGASIN MR500806
+=========================================================================================== 
+
+le planning jour du point de vente MR500806 pour la semaine du 16 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 17 POUR LE MAGASIN MR500806
+=========================================================================================== 
+
+le planning jour du point de vente MR500806 pour la semaine du 17 n'existe pas
+
+=========================================================================================== 
+EXCEPTION RELATIFVE A LA SEMAINE DU 18 POUR LE MAGASIN MR500806
+=========================================================================================== 
+
+le planning jour du point de vente MR500806 pour la semaine du 18 n'existe pas

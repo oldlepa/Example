@@ -19,11 +19,11 @@ public class TestUrl {
 		System.out.println("le ref est :"+url.getRef());
 		System.out.println(canonical);
 
-if(sUrl.endsWith("name=")){
-	System.out.println("Vrai");
-}else{
-	System.out.println("faux");
-}
+		if(sUrl.endsWith("name=")){
+			System.out.println("Vrai");
+		}else{
+			System.out.println("faux");
+		}
 	}
 
 }
